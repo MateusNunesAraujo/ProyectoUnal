@@ -6,6 +6,10 @@ from django.shortcuts import HttpResponse
 user_login = "Mateus"
 passw_login = "12345"
 
+
+def login(request):
+    return render(request,"index.html")
+
 def hello_world(request,user,passw):
     global user_login,passw_login
     if user == user_login and passw_login == passw:

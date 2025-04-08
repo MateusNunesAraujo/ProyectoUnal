@@ -1,14 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
     <title>Document</title>
 </head>
 <body>
-    <div id="login">
+    <form id="login" method="post">
+            <div class="close">X</div>  
+        <main>
+            <h2>Login</h2>
+            <div class="input-container">
+                <input type="text" id="input" required="">
+                <label for="input" class="label">Enter Text</label>
+                <div class="underline"></div>
+                <p class="login-error">error</p>
+            </div>
+            <div>
+                
+            </div>
+            <div class="input-container">
+                <input type="text" id="input" required="">
+                <label for="input" class="label">Enter Text</label>
+                <div class="underline"></div>
+                <p class="login-error">error</p>
+            </div>
+            <button id="send" type="submit">Iniciar sesion</button>
+        </main>
+        
+        <footer>
 
-    </div>
+        </footer>
+    </form>
 </body>
 </html>
