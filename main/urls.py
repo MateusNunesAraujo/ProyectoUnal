@@ -16,10 +16,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from login.views import hello_world,login
+from login.views import *
+from register.views import register_view
+from hoteles.views import *
+#Linea de codigo funcionales en etapa de DESARROLLO 
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/',login),
-    path('ejercicio/<str:user>/<str:passw>/', hello_world)
+    path('',login_view,name='login'),
+    path('register/',register_view, name="register"),  # URL para la vista de registro
+    path('home/',home, name="home"),  # URL para la vista de inicio
+    path("hoteles_registro/", home_hoteles_view, name="home_hoteles"),
+    path('lista_hoteles/', lista_hoteles_view, name='lista_hoteles'),
+    path('create_hotel/', create_hotel, name='create_hotel'),
+    path("mostrar_hotel/",mostrar_hotel , name="mostrar_hotel"),
+    path('update_hotel/<int:hotel_id>/', update_hotel, name='update_hotel'),
+    path('delete_hotel/<int:hotel_id>/', delete_hotel, name='delete_hotel'),
+    path('hoteles_destacados/', hoteles_destacados, name='hoteles_destacados'),
+    path("info_hoteles/<int:hotel_id>/", info_hoteles, name="info_hoteles"),
+    path('logout/',logout_view, name="logout")  # URL para la vista de login
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

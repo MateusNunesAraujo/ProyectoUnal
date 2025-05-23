@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/create_hotel.css' %}">
+  <title>Creando hotel</title>
+</head>
+
+<body>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+      <label for="nombre">Nombre del hotel:</label>
+      <input type="text" id="nombre" name="nombre" maxlength="30" value="{{hotel.nombre}}" required>
+    </div>
+
+    <div class="inputs">
+      <label for="precio_noche">Precio por noche:</label>
+      <input type="number" id="precio_noche" name="precio_noche" step="0.01" min="0" value="{{hotel.precio_noche}}" required>
+    </div>
+
+    <div class="inputs">
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" name="descripcion" maxlength="300" required>{{hotel.descripcion}}</textarea>
+    </div>
+
+    <div class="inputs">
+      <label for="estrellas">Estrellas:</label>
+      <input type="number" id="estrellas" name="estrellas" min="0" max="5" value="{{hotel.estrellas}}" required>
+    </div>
+
+    <div class="inputs">
+      <label for="ubicacion">Ubicación:</label>
+      <textarea id="ubicacion" name="ubicacion" required>{{hotel.ubicacion}}</textarea>
+    </div>
+
+    <div class="inputs">
+      <label for="resenas">Reseñas:</label>
+      <input type="number" id="resenas" name="resenas" min="0" value="{{hotel.resenas}}" required>
+    </div>
+
+    <div class="inputs">
+      <label for="habitaciones">Habitaciones:</label>
+      <input type="number" id="habitaciones" name="habitaciones" min="0" value="{{hotel.habitaciones}}" required>
+    </div>
+
+    <div class="inputs">
+      <label for="habitaciones_libres">Habitaciones libres:</label>
+      <input type="number" id="habitaciones_libres" name="habitaciones_libres" min="0" value="{{hotel.habitaciones_libres}}" required>
+    </div>
+
+    <div class="inputs">
+      <label for="imagenes">Imágenes del hotel:</label>
+      <input type="file" id="imagenes" name="imagenes" accept="image/*" multiple>
+    </div>
+    <div class="cont-buttons">
+       <button id="cancelar" type="button">Cancelar</button>
+       <button type="submit">Actualizar hotel</button>
+    </div>
+   
+  </form>
+  <script src="{% static "js/create_hotel.js" %}"></script>
+</body>
+
+</html>

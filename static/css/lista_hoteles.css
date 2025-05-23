@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f6f8fa;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.iconos-nav {
+    width: 30px;
+    height: 30px;
+}
+
+ul {
+    margin-right: 4rem;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+ul a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+ul a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+ul a:hover {
+    color: #000;
+}
+
+ul a:hover::after {
+    width: 100%;
+}
+
+.logout {
+    display: flex;
+    gap: 1rem;
+}
+
+.sesion-exito {
+    background-color: #e6ffed;
+    border: 1.5px solid #34c759;
+    color: #207544;
+    padding: 1.2rem 1.2rem 1.2rem 3.2rem;
+    ;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(52, 199, 89, 0.08);
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+.sesion-exito img {
+    width: 65px;
+}
+
+.container-add {
+    display: flex;
+    padding: 2.5rem;
+    justify-content: center;
+}
+
+.lista-hoteles {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 3rem;
+}
+
+.hotel {
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    width: 32rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.informacion {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.icon img {
+    width: 6.2rem;
+}
+
+.btn-informacion {
+    width: 100%;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+.modal-oculto {
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    background: #000000a6;
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+}
+
+.modal-activado {
+    pointer-events: all;
+    transition: 1s;
+    opacity: 1;
+}
+
+.modal-activado header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.main-oculto {
+    overflow: auto;
+    padding: 1.5rem;
+    position: relative;
+    top: -1000px;
+    background-color: #fff;
+    width: 55%;
+    height: 90%;
+    transition: 1s;
+}
+
+.main-activado {
+    transition: 1.5s;
+    top: 0px;
+}
+
+.modal-informacion {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 0;
+}
+
+/* From Uiverse.io by javierBarroso */ 
+.button {
+  position: relative;
+  width: 4em;
+  height: 4em;
+  border: none;
+  background: rgba(180, 83, 107, 0.11);
+  border-radius: 5px;
+  transition: background 0.5s;
+}
+
+.X {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2em;
+  height: 1.5px;
+  background-color: rgb(255, 255, 255);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.Y {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2em;
+  height: 1.5px;
+  background-color: #fff;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.close {
+  position: absolute;
+  display: flex;
+  padding: 0.8rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  top: -70%;
+  left: 50%;
+  width: 3em;
+  height: 1.7em;
+  font-size: 12px;
+  background-color: rgb(19, 22, 24);
+  color: rgb(187, 229, 236);
+  border: none;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.button:hover {
+  background-color: rgb(211, 21, 21);
+}
+
+.button:active {
+  background-color: rgb(130, 0, 0);
+}
+
+.button:hover > .close {
+  animation: close 0.2s forwards 0.25s;
+}
+
+@keyframes close {
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.informacion-1 {
+    min-height: 10rem;
+}
+
+.informacion-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.cont-imgs {
+    width: 100%;
+    display: flex;
+    overflow: overlay;
+    align-items: center;
+}
+
+#estrellas {
+    display: flex;
+    align-items: center;
+}
+
+.img-estrellas {
+    width: 2rem;
+}
+
+.img-hoteles {
+    width: 25rem;
+}
+
+/* From Uiverse.io by catraco */
+.cssbuttons-io-button {
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2em;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 16px;
+    padding: .5em 1.5em;
+    color: white;
+    background: linear-gradient(0deg, rgb(0, 150, 60), rgb(100, 250, 150));
+    border: none;
+    outline: none;
+    border-bottom: 3px solid rgb(0, 130, 40);
+    box-shadow: 0 .5em .5em -.4em rgb(0, 0, 0, .5);
+    letter-spacing: 0.08em;
+    border-radius: 20em;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.cssbuttons-io-button:hover {
+    filter: brightness(1.2);
+    color: rgb(0, 0, 0, .5);
+}
+
+.cssbuttons-io-button:active {
+    transition: 0s;
+    transform: rotate(-10deg);
+}
+
+.botones button {
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-informacion {
+    background-color: rgba(58, 122, 137, 0.84);
+}
+
+.btn-eliminar {
+    background: #df3d3d;
+}
+
+.btn-actualizar {
+    background-color: rgba(79, 81, 226, 0.84);
+}

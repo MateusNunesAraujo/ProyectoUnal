@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de hoteles</title>
+       <link rel="stylesheet" href="{% static 'css/hoteles_registro.css' %}">
+</head>
+<body>
+    <div>{% csrf_token %}</div>
+    {% include "navbar.html" %}
+    <main>
+        <div class="sesion-exito">
+            <img src="{% static "img/iconos/usuario.png" %}" alt="">
+            <p>Bienvenido {{user.username}}</p>
+        </div>
+    </main>
+   
+</body>
+<script src="{% static "/js/logout.js" %}"></script>
+</html>

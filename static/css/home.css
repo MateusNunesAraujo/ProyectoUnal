@@ -1,0 +1,552 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    /* Fuente Inter */
+    background-color: #f0f8f8;
+    /* Un color de fondo base muy claro para el efecto */
+    position: relative;
+    /* Necesario para el z-index de los elementos hijos si no son fixed */
+}
+
+.fondo-dinamico {
+    position: fixed;
+    /* Mantiene el fondo fijo en la ventana */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Envía el fondo detrás de cualquier otro contenido */
+    /* No hay degradado principal aquí, los blobs crearán el efecto de color */
+}
+
+/* Estilos para los blobs individuales */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    /* Para que sean circulares */
+    filter: blur(100px);
+    /* Desenfoque para un efecto suave y etéreo */
+    opacity: 0.6;
+    /* Opacidad sutil */
+    mix-blend-mode: screen;
+    /* Modo de mezcla para que los colores se superpongan de forma atractiva */
+}
+
+/* Blob 1: Verde claro */
+.blob:nth-child(1) {
+    background-color: #A7F3D0;
+    /* Verde claro */
+    width: 40vw;
+    height: 40vw;
+    top: -10%;
+    left: -10%;
+    animation: moverBlob1 40s ease-in-out infinite alternate;
+}
+
+/* Blob 2: Azul verdoso */
+.blob:nth-child(2) {
+    background-color: #5F9EA0;
+    /* Azul verdoso */
+    width: 50vw;
+    height: 50vw;
+    bottom: -15%;
+    right: -15%;
+    animation: moverBlob2 50s ease-in-out infinite alternate-reverse;
+}
+
+/* Blob 3: Marrón sutil */
+.blob:nth-child(3) {
+    background-color: #C8B4A2;
+    /* Marrón sutil */
+    width: 35vw;
+    height: 35vw;
+    top: 20%;
+    left: 30%;
+    animation: moverBlob3 45s linear infinite alternate;
+}
+
+/* Blob 4: Verde medio */
+.blob:nth-child(4) {
+    background-color: #34D399;
+    /* Verde medio */
+    width: 45vw;
+    height: 45vw;
+    bottom: 5%;
+    left: -5%;
+    animation: moverBlob4 55s ease-in-out infinite alternate;
+}
+
+/* Definición de animaciones para cada blob */
+@keyframes moverBlob1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(20vw, 10vh) scale(1.1);
+    }
+
+    50% {
+        transform: translate(0, 20vh) scale(0.9);
+    }
+
+    75% {
+        transform: translate(-10vw, 5vh) scale(1.05);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes moverBlob2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(-15vw, -5vh) scale(0.95);
+    }
+
+    50% {
+        transform: translate(-30vw, 10vh) scale(1.1);
+    }
+
+    75% {
+        transform: translate(-10vw, -10vh) scale(1.0);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes moverBlob3 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(10vw, -10vh) scale(1.05);
+    }
+
+    50% {
+        transform: translate(-5vw, 15vh) scale(0.9);
+    }
+
+    75% {
+        transform: translate(15vw, 0) scale(1.1);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes moverBlob4 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(5vw, 15vh) scale(1.05);
+    }
+
+    50% {
+        transform: translate(20vw, -5vh) scale(0.95);
+    }
+
+    75% {
+        transform: translate(10vw, 10vh) scale(1.0);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* Asegúrate de que tu contenido principal no sea cubierto por el fondo */
+main,
+.cont-acciones-principales,
+.acciones-container,
+.container-hotel,
+.card-hotel {
+    position: relative;
+    /* Asegura que estos elementos estén por encima del fondo (-1 z-index) */
+    z-index: 1;
+    /* Un z-index mayor que el fondo */
+}
+
+
+/* Estilos para el contenedor principal de las acciones */
+.cont-acciones-principales {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #333;
+}
+
+.cont-acciones-principales h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #2e8b57;
+    /* Un verde más oscuro para el título */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos del contenedor de búsqueda */
+.acciones-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+}
+
+.input-container .input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.input-container .icon {
+    width: 24px;
+    height: 24px;
+    fill: #5F9EA0;
+    /* Color del icono de búsqueda */
+    margin-left: 0.5rem;
+}
+
+/* Estilos para el contenedor de hoteles */
+.container-hotel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Columnas adaptables */
+    gap: 2rem;
+    /* Espacio entre tarjetas */
+    padding: 2rem;
+    max-width: 1200px;
+    /* Ancho máximo para centrar las tarjetas */
+    margin: 0 auto;
+    /* Centrar el contenedor */
+}
+
+/* Estilos para las tarjetas de hotel (innovadores y simples) */
+.card-hotel {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    /* Bordes más redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    /* Sombra más suave y pronunciada */
+    overflow: hidden;
+    /* Asegura que la imagen no se desborde */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transición suave al pasar el ratón */
+}
+
+.card-hotel:hover {
+    transform: translateY(-5px);
+    /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    /* Sombra más intensa al pasar el ratón */
+}
+
+.card-hotel .container-img {
+    width: 100%;
+    height: 200px;
+    /* Altura fija para la imagen */
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    /* Separador sutil */
+}
+
+.card-hotel .img-hotel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cubre el área sin distorsionar */
+    transition: transform 0.3s ease;
+    /* Transición para el zoom */
+}
+
+.card-hotel:hover .img-hotel {
+    transform: scale(1.05);
+    /* Ligerísimo zoom al pasar el ratón */
+}
+
+.card-hotel .container-informacion {
+    padding: 1.5rem;
+    flex-grow: 1;
+    /* Permite que la información ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-hotel .titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.card-hotel .titulo h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin: 0;
+}
+
+.card-hotel .container-estrellas {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.card-hotel .estrella {
+    width: 18px;
+    height: 18px;
+}
+
+.card-hotel .informacion_rapida p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.card-hotel .precio {
+    font-weight: bold;
+    color: #2e8b57;
+    /* Verde para el precio */
+    font-size: 1.1rem;
+}
+
+.card-hotel .valoracion {
+    font-weight: 500;
+    color: #555;
+}
+
+.card-hotel .informacion {
+    padding: 1.5rem;
+    padding-top: 0;
+    /* Ajuste para que no haya doble padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    /* Separador sutil */
+}
+
+.card-hotel .informacion_secundaria {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.card-hotel .iconos {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.card-hotel .iconos:hover {
+    opacity: 1;
+}
+
+.card-hotel button {
+    background-color: #2e8b57;
+    /* Verde principal */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(46, 139, 87, 0.2);
+}
+
+.card-hotel button:hover {
+    background-color: #257a4b;
+    /* Verde más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+
+/* Estilos para la barra de navegación (navbar) */
+nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fondo semi-transparente para un efecto flotante */
+    backdrop-filter: blur(8px);
+    /* Efecto de desenfoque para el fondo */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Sombra sutil */
+    position: sticky;
+    /* Sticky para que se quede en la parte superior al hacer scroll */
+    top: 0;
+    z-index: 10;
+    /* Asegura que la navbar esté siempre en la parte superior */
+    border-bottom-left-radius: 1rem;
+    /* Bordes redondeados sutiles */
+    border-bottom-right-radius: 1rem;
+    margin-bottom: 2rem;
+    /* Espacio debajo de la navbar */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    /* Espacio entre los elementos de la lista */
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 0.5rem 0.75rem;
+    /* Padding para un área de clic más grande */
+    border-radius: 0.5rem;
+}
+
+nav ul li a:hover {
+    color: #2e8b57;
+    /* Verde al pasar el ratón */
+    transform: translateY(-2px);
+    /* Ligero efecto de elevación */
+    background-color: rgba(46, 139, 87, 0.05);
+    /* Fondo muy sutil al pasar el ratón */
+}
+
+nav .iconos-nav {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover .iconos-nav {
+    opacity: 1;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logout button {
+    background-color: #ff6347;
+    /* Un rojo anaranjado para "Cerrar Sesión" */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(255, 99, 71, 0.2);
+}
+
+.logout button:hover {
+    background-color: #e5533d;
+    /* Rojo más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+.logout a {
+    text-decoration: none;
+    color: #2e8b57;
+    /* Verde para el nombre de la empresa */
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.logout a:hover {
+    color: #1e6e44;
+    /* Verde más oscuro al pasar el ratón */
+}
+
+/* Media queries para la navbar */
+@media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    nav ul li {
+        width: 100%;
+        justify-content: center;
+        /* Centra los elementos en móvil */
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+    }
+
+    .logout {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logout button,
+    .logout a {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0.75rem;
+    }
+
+    .logout button {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .logout a {
+        font-size: 1rem;
+    }
+}

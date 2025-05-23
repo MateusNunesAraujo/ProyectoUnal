@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Hoteles</title>
+    <link rel="stylesheet" href="{% static "/css/home.css" %}">
+</head>
+
+<body>
+    <div>{% csrf_token %}</div>
+    {% include "nabvar.html" %}
+
+    <main>
+        <div class="cont-acciones-principales"> 
+            <h1 id="hoteles_destacados">Descubre Nuestros Hoteles Destacados</h1>
+             <p>Explora una selección exclusiva de los alojamientos mejor valorados y más populares, elegidos por su calidad excepcional y experiencias únicas.</p>
+            </div>
+          
+        </div>
+
+        <div class="container-hotel">
+            {% for item in informacion %}
+            <div class="card-hotel">
+                <div class="container-informacion">
+                    <div class="titulo">
+                        <h2>{{ item.hotel.nombre }}</h2>
+                        <div class="container-estrellas"><img class="estrella" src="{% static "/img/iconos/estrella.png" %}" alt=""><img class="estrella" src="{% static "/img/iconos/estrella.png" %}" alt=""><img class="estrella" src="{% static "/img/iconos/estrella.png" %}" alt=""><img class="estrella" src="{% static "/img/iconos/estrella.png" %}" alt=""><img class="estrella" src="{% static "/img/iconos/estrella.png" %}" alt=""></div>
+                    </div>
+                    <div class="informacion_rapida">
+                        <p class="habitaciones">{{ item.hotel.habitaciones_libres}} habitaciones disponibles </p>
+                        <p class="precio"> Desde {{ item.hotel.precio_noche}} COP por noche </p>
+                        <p class="valoracion">⭐ {{ item.hotel.estrellas}}/5 ({{ item.hotel.resenas}} reseñas)</p>
+                    </div>
+
+                </div>
+                <div class="container-img">
+                    {% for img in item.imagenes %}
+                        {% if forloop.first %}
+                            <img class="img-hotel" src="{{ img.imagen.url }}" alt="">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="informacion">
+                    <div class="informacion_secundaria"><img class="iconos" src="{% static "/img/iconos/mensaje-destacado.png" %}" alt=""><img class="iconos" src="{% static "/img/iconos/igual-que.png" %}" alt=""></div>
+                    <button class="info-hotel" id_hotel="{{item.hotel.id}}" >Ver más</button>
+                </div>
+            </div>
+            {% endfor %}
+    </main>
+    <script src="{% static "/js/logout.js" %}"></script>
+</body>
+
+</html>

@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login'
+    'login',
+    'hoteles',
+    'register'
 ]
 
 MIDDLEWARE = [
@@ -116,9 +118,28 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+#Url indicativa para donde buscar los archivos estaticos
 STATIC_URL = 'static/'
+#Línea de codigo necesaria para indicarle a Django donde estarán los archivos estaticos (solo en desarrollo)
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+import os
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'login.User'
+
+LOGIN_REDIRECT_URL = "/home/"  # Redirige después de iniciar sesión
+
+LOGOUT_REDIRECT_URL = ""  # Redirige después de cerrar sesión
+
+AUTHENTICATION_BACKENDS = [
+    'login.backend.MyBackend',  # Ruta a tu backend personalizado
+    'django.contrib.auth.backends.ModelBackend',  # Backend predeterminado de Django
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")

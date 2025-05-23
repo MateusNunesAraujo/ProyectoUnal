@@ -1,0 +1,88 @@
+/* hoteles_registro.css */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f6f8fa;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    background: #fff;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #34c759;
+    outline: none;
+}
+
+input[type="file"] {
+    margin-bottom: 1.2rem;
+}
+
+button[type="submit"] {
+    background: #34c759;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: #28a745;
+}
+
+#cancelar {
+    background: #df3d3d;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#cancelar:hover {
+    background: #ab2f2f;
+}
+
+.cont-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}

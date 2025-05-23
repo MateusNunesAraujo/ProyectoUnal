@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Hotel - {{hotel.nombre}}</title>
+    <link rel="stylesheet" href="{% static "/css/info_hotel.css" %}">
+</head>
+<body>
+    <div class="hotel-detail-container">
+        <div class="hotel-header">
+            <h1>Hotel {{hotel.nombre}}</h1>
+            <p class="valoracion">⭐ {{hotel.estrellas}}/5 ({{hotel.resenas}} reseñas)</p>
+                           <div class="container-estrellas">
+    {% for i in estrellas_llenas %}
+        <img class="estrella" src="{% static 'img/iconos/estrella.png' %}" alt="Estrella">
+    {% endfor %}
+    {% for i in estrellas_vacias %}
+        <img class="estrella" src="{% static 'img/iconos/estrella_vacia.png' %}" alt="Estrella Vacía">
+    {% endfor %}
+</div>
+        </div>
+        <div class="image-carousel">
+            {% for img in imagenes %}
+            <img src="{{img.imagen.url}}" alt="Imagen del Hotel 1">
+          {% endfor %}
+            
+        </div>
+
+        <div class="info-section">
+            <h2>Acerca de este hotel</h2>
+            <p>{{ hotel.descripcion }}</p>
+            <p>Contamos con <strong>{{hotel.habitaciones_libres}} habitaciones disponibles</strong></p>
+            <p class="precio">Precio por noche: <strong>{{hotel.precio_noche}}COP</strong></p>
+        </div>
+
+        <div class="info-section">
+            <h2>Servicios y Comodidades</h2>
+            <ul>
+                <li>Piscina al aire libre</li>
+                <li>Restaurante con cocina local</li>
+                <li>Wi-Fi gratuito</li>
+                <li>Aire acondicionado</li>
+                <li>Tours guiados por la selva</li>
+                <li>Transporte al aeropuerto</li>
+                <li>Recepción 24 horas</li>
+                <li>Bar y lounge</li>
+            </ul>
+        </div>
+
+        <div class="comments-section">
+            <h2>Comentarios de los Huéspedes</h2>
+            <ul class="comment-list">
+                <li class="comment-item">
+                    <p class="comment-author">Juan Pérez</p>
+                    <p class="comment-text">"¡Una experiencia increíble! El personal es muy amable y las vistas son espectaculares. Volveremos sin duda."</p>
+                </li>
+                <li class="comment-item">
+                    <p class="comment-author">María García</p>
+                    <p class="comment-text">"Hotel muy cómodo y limpio. La comida del restaurante es deliciosa. ¡Altamente recomendado!"</p>
+                </li>
+                <li class="comment-item">
+                    <p class="comment-author">Carlos Rodríguez</p>
+                    <p class="comment-text">"Un lugar perfecto para desconectar. La conexión Wi-Fi podría mejorar un poco, pero en general fue excelente."</p>
+                </li>
+            </ul>
+
+            <h3>Deja tu comentario</h3>
+            <form class="comment-form">
+                <label for="comment-author-name">Tu nombre:</label>
+                <input type="text" id="comment-author-name" name="author" required>
+
+                <label for="comment-text-area">Tu comentario:</label>
+                <textarea id="comment-text-area" name="comment" required></textarea>
+
+                <button type="submit">Enviar Comentario</button>
+            </form>
+        </div>
+
+        <div class="action-button-container">
+            <button class="action-button">Reservar Ahora</button>
+        </div>
+
+        <a href="#" onclick="history.back()" class="back-button">← Volver a la lista de hoteles</a>
+    </div>
+</body>
+</html>

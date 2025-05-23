@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+body {
+    background-image: url('/static/img/img/fondo_amazonico.png');
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes vuelo-loro {
+  0%   { top: 10%; left: 5%; transform: scaleX(1); }
+  25%  { top: 15%; left: 80%; transform: scaleX(1); }
+  50%  { top: 70%; left: 70%; transform: scaleX(-1); }
+  75%  { top: 80%; left: 10%; transform: scaleX(-1); }
+  100% { top: 10%; left: 5%; transform: scaleX(1); }
+}
+
+.loro-volador {
+  position: absolute;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  animation: vuelo-loro 20s linear infinite;
+  pointer-events: none;
+}
+@keyframes vuelo-loro {
+    0%   { top: 0; left: 80%; }
+    25%  { top: 10%; left: 10%; }
+    50%  { top: 70%; left: 20%; }
+    75%  { top: 50%; left: 80%; }
+    100% { top: 10%; left: 80%; }
+  }
+  
+  .loro-volador {
+    position: absolute;
+    z-index: 10;
+    width: 170px;
+    height: 180px;
+    animation: vuelo-loro 100s linear infinite;
+    pointer-events: none;
+  }
+  
+  
+
+
+#login {
+    box-shadow: 0px 4px 6px rgb(0 0 0 / 63%);
+    background: #fff;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    width: 30rem;
+    height: 80%;
+    border-radius: 20px;
+}
+
+.login-error {
+    color: #ff0000dd;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.register {
+    margin-top: 1rem;
+    margin-right: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.register button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #3cb371; /* Verde moderno */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.register button:hover {
+    background-color: #3cb371; /* Verde más oscuro al pasar el cursor */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.register button:active {
+    transform: translateY(0); /* Vuelve a su posición original al hacer clic */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+#login main h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(90deg, #2e8b57, #3cb371, #20b2aa, #8b4513); /* Colores naturales */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation-nature 4s infinite;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradient-animation-nature {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#login main {
+    display: flex;
+    height: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* From Uiverse.io by Satwinder04 */
+.input-container {
+    position: relative;
+    margin: 40px auto;
+    width: 300px;
+}
+
+.input-container input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+}
+
+.input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-container input[type="text"]:focus~.label,
+.input-container input[type="text"]:valid~.label {
+    top: -20px;
+    font-size: 16px;
+    color: #3cb371;
+}
+
+.input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #3cb371;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus~.underline,
+.input-container input[type="text"]:valid~.underline {
+    transform: scaleX(1);
+}
+
+/* From Uiverse.io by SteveBloX */
+#send {
+    margin-top: 1.8rem;
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.726);
+    border-style: solid;
+    border-color: #3cb371;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+#send:hover {
+    background-color: #3cb371;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+#send:active {
+    transform: translateY(-1px);
+    background-color: #3cb371;
+}
+
+#login footer {
+
+    display: flex;
+    height: 25%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #login {
+        gap: 10px;
+        width: 80%;
+        height: 70%;
+        padding: 20px;
+    }
+
+    #login main {
+        gap: 10px;
+    }
+
+    #login main h2 {
+        font-size: 2rem;
+    }
+
+    .input-container {
+        width: 75%;
+        margin: 20px auto;
+    }
+
+    button {
+        padding: 1em 2em;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    #login {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    #login main h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 0.8em 1.5em;
+        font-size: 9px;
+    }
+}
