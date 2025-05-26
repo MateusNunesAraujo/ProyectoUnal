@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="{% static '/css/info_eventos.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+        <button class="salir">
+  <span class="circle" aria-hidden="true">
+  <span class="icon arrow"></span>
+  </span>
+  <span class="button-text">Regresar</span>
+</button>
+
+        <img src="https://placehold.co/900x400/4F46E5/FFFFFF?text=Imagen+del+Evento" alt="Imagen del Evento" class="event-detail-image">
+
+        <h1 class="event-title">Nombre del Evento Aquí</h1>
+
+        <div class="event-meta">
+            <div class="event-meta-item">
+                <span class="icon icon-calendar"></span>
+                <span>Fecha: 15 de Julio de 2025</span>
+            </div>
+            <div class="event-meta-item">
+                <span class="icon icon-clock"></span>
+                <span>Hora: 19:00 - 23:00</span>
+            </div>
+            <div class="event-meta-item">
+                <span class="icon icon-map-marker"></span>
+                <span>Ubicación: Plaza Central, [Nombre del Pueblo]</span>
+            </div>
+        </div>
+
+        <div class="event-description">
+            <h3>Sobre este evento</h3>
+            <p>
+                Este es un espacio para la descripción detallada del evento. Aquí puedes incluir
+                información sobre los artistas, el programa, actividades especiales, requisitos
+                de entrada, y cualquier otro detalle relevante.
+            </p>
+            <p>
+                Por ejemplo, si es un festival de música, podrías listar las bandas que se presentarán,
+                los géneros musicales, y si habrá venta de comida y bebida. Si es una feria artesanal,
+                menciona el tipo de productos que se podrán encontrar y si hay talleres.
+            </p>
+            <p>
+                ¡No olvides añadir un tono entusiasta para animar a la gente a participar!
+            </p>
+        </div>
+
+        <div class="event-map">
+            <h3>Cómo llegar</h3>
+            <div class="map-placeholder">
+                [Aquí iría un mapa interactivo (ej. Google Maps iframe) o indicaciones detalladas]
+            </div>
+            <p class="text-sm mt-2 text-gray-600 text-center">
+                Puedes encontrar el lugar fácilmente en el mapa. ¡Te esperamos!
+            </p>
+        </div>
+
+        <div style="text-align: center;">
+            <button class="salir">
+  <span class="circle" aria-hidden="true">
+  <span class="icon arrow"></span>
+  </span>
+  <span class="button-text">Regresar</span>
+</button>
+        </div>
+    </div>
+<script src="{% static 'js/info_eventos.js' %}"></script>
+</body>
+</html>

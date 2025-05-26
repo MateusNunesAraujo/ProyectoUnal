@@ -48,13 +48,14 @@ document.querySelectorAll(".btn-informacion").forEach(e => {
 })
 
 document.querySelectorAll(".btn-actualizar").forEach(e => {
-        e.addEventListener("click", () => {
-            window.location.href = "/update_hotel/" + e.getAttribute("id-hotel") + "/";
-        });
+    e.addEventListener("click", () => {
+        window.location.href = "/update_hotel/" + e.getAttribute("id-hotel") + "/";
+    });
 })
 
 document.querySelectorAll(".btn-eliminar").forEach(e => {
-        e.addEventListener("click", () => {
-            window.location.href = "/delete_hotel/" + e.getAttribute("id-hotel") + "/";
-        });
+    e.addEventListener("click", () => {
+        window.location.href = "/delete_hotel/" + e.getAttribute("id-hotel") + "/";
+        document.querySelector(".eliminacion-exitosa").textContent.style.display = "block"
+    });
 })

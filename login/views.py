@@ -39,17 +39,49 @@ def home(request):
         informacion = []
         for h in hoteles:
             imgs = ImagenesH.objects.filter(fk_hoteles=h)
-            informacion.append({"hotel": h, "imagenes": imgs})
+            hotel = {
+                "id":h.id,
+                "nombre": h.nombre,
+                "descripcion": h.descripcion,
+                "ubicacion": h.ubicacion,
+                "precio_noche": h.precio_noche,
+                "estrellas_llenas": range(h.estrellas),
+                "estrellas_vacias": range(5 - h.estrellas),
+                "habitaciones": h.habitaciones,
+                "resenas": h.resenas,
+                "habitaciones_libres": h.habitaciones_libres,
+                }
+            informacion.append({"hotel": hotel, "imagenes": imgs})
         return render(request, "home.html", {"informacion": informacion})
     else:
         return redirect('login')
-
-@solo_turistas
-def hoteles_destacados(request):
-    return render(request, "hoteles_destacados.html")
 
 def info_hoteles(request,hotel_id):
     hotel = get_object_or_404(Hoteles,pk = hotel_id)
     imagenes = ImagenesH.objects.filter(fk_hoteles = hotel_id)
     print(imagenes)
-    return render(request, "info_hotel.html",{"hotel":hotel,"imagenes": imagenes,"estrellas_llenas": range(hotel.estrellas),  "estrellas_vacias": range(5 - hotel.estrellas)})
+    return render(request, "info_hotel.html",{"hotel":hotel,"imagenes": imagenes,"estrellas_llenas": range(hotel.estrellas), "estrellas_vacias": range(5 - hotel.estrellas)})
+
+def buscar_hotel(request,nombre):
+    """   list_imagenes = [] """
+    try:
+        hotel = Hoteles.objects.get(nombre__iexact=nombre)
+    except Hoteles.DoesNotExist:
+        hoteles = Hoteles.objects.all()
+        informacion = []
+        for h in hoteles:
+            imgs = ImagenesH.objects.filter(fk_hoteles=h)
+            informacion.append({"hotel": h, "imagenes": imgs})
+        return render(request, "home.html", {"informacion": informacion})
+    imagenes = ImagenesH.objects.filter(fk_hoteles = hotel)
+    """   for img in imagenes:
+        list_imagenes.append(img.imagen.url) """
+    return render(request,"info_hotel.html",{"hotel":hotel,"imagenes":imagenes,"estrellas_llenas": range(hotel.estrellas),  "estrellas_vacias": range(5 - hotel.estrellas)})
+
+#Proximamente, agregarlo en una app de "eventos"
+@solo_turistas
+def eventos(request):
+    return render(request, "eventos.html")
+
+def info_eventos(request):
+    return render(request, "info_eventos.html")

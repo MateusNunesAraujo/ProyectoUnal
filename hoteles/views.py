@@ -18,7 +18,6 @@ def lista_hoteles_view(request):
 @solo_empresario
 def create_hotel(request):
     if request.method == "POST":
-         # 1. Crear el hotel
         hotel = Hoteles.objects.create(
             dueno=request.user,
             nombre=request.POST['nombre'],
@@ -31,12 +30,11 @@ def create_hotel(request):
             habitaciones_libres=request.POST['habitaciones_libres'],
         )
 
-        # 2. Guardar cada imagen asociada al hotel
         imagenes = request.FILES.getlist('imagenes')
         for img in imagenes:
             ImagenesH.objects.create(fk_hoteles=hotel, imagen=img)
 
-        return redirect('lista_hoteles')  # Redirige a la lista de hoteles
+        return redirect('lista_hoteles')
     return render(request,"create_hotel.html")
 
 
@@ -80,9 +78,48 @@ def update_hotel(request,hotel_id):
         return redirect('lista_hoteles')
     return render(request,'update_hotel.html', {"hotel":hotel}) 
 
-@solo_empresario
-def delete_hotel(request,hotel_id):
-    hotel = get_object_or_404(Hoteles, pk = hotel_id, dueno = request.user)
-    hotel.delete()
-    return render(request,'lista_hoteles.html', {"mensaje":"Eliminación exitosa"})
 
+def delete_hotel(request,hotel_id):
+    hotel = get_object_or_404(Hoteles, pk = hotel_id, dueno = request.user)    
+    hotel.delete()
+    hoteles = Hoteles.objects.filter(dueno = request.user)
+    return render(request,'lista_hoteles.html', {"mensaje":"Eliminación exitosa","hoteles":hoteles})
+
+def filtrar(request):
+    json_cargado = json.loads(request.body)
+    estrella = json_cargado["estrella"]
+    precio_rango = json_cargado["precio_rango"]
+    informacion = []
+
+    hoteles = Hoteles.objects.all()
+
+    if(json_cargado["estrella"] != "todos"):
+        hoteles = hoteles.filter(estrellas = estrella)
+        print("Resultados de ESTRELLAS")
+    
+    if(json_cargado["precio_rango"] != "todos"):
+        if("mas" in precio_rango.split('-')):
+             hoteles = hoteles.filter(precio_noche__gte=precio_rango.split('-')[0])
+        else:
+            min_precio, max_precio = map(int, precio_rango.split('-'))
+            hoteles = hoteles.filter(precio_noche__gte=min_precio, precio_noche__lte=max_precio)
+        print("Resultados de PRECIOS POR RANGOS")
+    for h in hoteles:
+        imagenes = ImagenesH.objects.filter(fk_hoteles = h)
+        imagenes_urls = [img.imagen.url for img in imagenes]
+        informacion.append({
+        "id":h.id,
+        "nombre": h.nombre,
+        "descripcion": h.descripcion,
+        "ubicacion": h.ubicacion,
+        "precio_noche": h.precio_noche,
+        "estrellas": h.estrellas,
+        "habitaciones": h.habitaciones,
+        "resenas": h.resenas,
+        "habitaciones_libres": h.habitaciones_libres,
+        "img_urls": imagenes_urls
+    })
+    return JsonResponse({"informacion":informacion})
+        
+
+    

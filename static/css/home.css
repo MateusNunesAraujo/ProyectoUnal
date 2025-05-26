@@ -8,6 +8,7 @@ body {
     /* Necesario para el z-index de los elementos hijos si no son fixed */
 }
 
+
 .fondo-dinamico {
     position: fixed;
     /* Mantiene el fondo fijo en la ventana */
@@ -181,10 +182,70 @@ main,
 
 /* Estilos para el contenedor principal de las acciones */
 .cont-acciones-principales {
+    display: flex;
     text-align: center;
     padding: 2rem 1rem;
     color: #333;
+    flex-direction: column;
 }
+
+.filtros-container {
+    display: flex;
+    margin: 1rem;
+    gap: 2rem;
+}
+
+.filtros-container button {
+    border-style: none;
+    padding: 0.5rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s all;
+    background-color: #eee;
+    color: #2b2a2a;
+}
+
+.filtros-estrellas button:hover {
+    background-color: rgb(232, 226, 117);
+    transform: translateY(-5px);
+}
+
+.filtros-precios button:hover {
+    background-color: rgb(162, 237, 122);
+    transform: translateY(-5px);
+}
+
+
+.filtros-container button:hover {
+    transform: translateY(-5px);
+}
+
+/* Botones de filtros activados */
+
+.filtros-estrellas-activado{
+    background-color: rgb(232, 226, 117) !important;
+    transform: translateY(-5px);
+
+}
+
+.filtros-precios-activado{
+    background-color: rgb(162, 237, 122) !important;
+     transform: translateY(-5px);
+}
+
+.sin-resultado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sin-resultado img{
+width: 20rem;
+}
+
+
+
 
 .cont-acciones-principales h1 {
     font-size: 2.8rem;
@@ -199,6 +260,8 @@ main,
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input-container {
@@ -222,12 +285,18 @@ main,
     color: #333;
 }
 
-.input-container .icon {
-    width: 24px;
-    height: 24px;
-    fill: #5F9EA0;
-    /* Color del icono de búsqueda */
-    margin-left: 0.5rem;
+.buscador_hotel {
+    background-color: #7190dd;
+    border-style: none;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.5rem;
+    border-radius: 10px;
+    transition: 0.3s transform;
+}
+
+.buscador_hotel:hover {
+    transform: translateY(-3px);
 }
 
 /* Estilos para el contenedor de hoteles */

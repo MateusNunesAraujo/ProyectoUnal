@@ -34,8 +34,11 @@ urlpatterns = [
     path("mostrar_hotel/",mostrar_hotel , name="mostrar_hotel"),
     path('update_hotel/<int:hotel_id>/', update_hotel, name='update_hotel'),
     path('delete_hotel/<int:hotel_id>/', delete_hotel, name='delete_hotel'),
-    path('hoteles_destacados/', hoteles_destacados, name='hoteles_destacados'),
+    path('buscar_hotel/<str:nombre>/',buscar_hotel, name='buscar_hotel'),
     path("info_hoteles/<int:hotel_id>/", info_hoteles, name="info_hoteles"),
+    path("filtrar/",filtrar, name="filtrar"),
+    path("info_eventos/", info_eventos, name="info_eventos"),
+    path('eventos/',eventos, name='eventos'),
     path('logout/',logout_view, name="logout")  # URL para la vista de login
 ]
 

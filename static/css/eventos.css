@@ -1,0 +1,519 @@
+    /* Estilos base para el cuerpo */
+    body {
+        font-family: 'Inter', sans-serif;
+        /* Fuente por defecto, asumiendo que la plataforma la provee */
+        background-color: #F3F4F6;
+        /* Color de fondo claro */
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fondo semi-transparente para un efecto flotante */
+    backdrop-filter: blur(8px);
+    /* Efecto de desenfoque para el fondo */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Sombra sutil */
+    position: sticky;
+    /* Sticky para que se quede en la parte superior al hacer scroll */
+    top: 0;
+    z-index: 10;
+    /* Asegura que la navbar esté siempre en la parte superior */
+    border-bottom-left-radius: 1rem;
+    /* Bordes redondeados sutiles */
+    border-bottom-right-radius: 1rem;
+    margin-bottom: 2rem;
+    /* Espacio debajo de la navbar */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    /* Espacio entre los elementos de la lista */
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 0.5rem 0.75rem;
+    /* Padding para un área de clic más grande */
+    border-radius: 0.5rem;
+}
+
+nav ul li a:hover {
+    color: #2e8b57;
+    /* Verde al pasar el ratón */
+    transform: translateY(-2px);
+    /* Ligero efecto de elevación */
+    background-color: rgba(46, 139, 87, 0.05);
+    /* Fondo muy sutil al pasar el ratón */
+}
+
+nav .iconos-nav {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover .iconos-nav {
+    opacity: 1;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logout button {
+    background-color: #ff6347;
+    /* Un rojo anaranjado para "Cerrar Sesión" */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(255, 99, 71, 0.2);
+}
+
+.logout button:hover {
+    background-color: #e5533d;
+    /* Rojo más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+.logout a {
+    text-decoration: none;
+    color: #2e8b57;
+    /* Verde para el nombre de la empresa */
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.logout a:hover {
+    color: #1e6e44;
+    /* Verde más oscuro al pasar el ratón */
+}
+
+/* Media queries para la navbar */
+@media (max-width: 900px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    nav ul li {
+        width: 100%;
+        justify-content: center;
+        /* Centra los elementos en móvil */
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+    }
+
+    .logout {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logout button,
+    .logout a {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0.75rem;
+    }
+
+    .logout button {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .logout a {
+        font-size: 1rem;
+    }
+}
+
+    /* Contenedor principal para centrar el contenido */
+    .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        /* px-4 */
+        padding-right: 1rem;
+        /* px-4 */
+        /* py-8 */
+        padding-bottom: 2rem;
+        /* py-8 */
+    }
+
+    /* Márgenes para secciones */
+    .my-12 {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Títulos de sección */
+    .text-4xl {
+        font-size: 2.25rem;
+    }
+
+    .font-bold {
+        font-weight: 700;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-primary {
+        color: #2e8b57;
+        /* Azul/púrpura vibrante */
+    }
+
+    .mb-10 {
+        margin-bottom: 2.5rem;
+    }
+
+    /* Estilos de la cuadrícula para tarjetas */
+    .grid {
+        display: grid;
+    }
+
+    .gap-8 {
+        gap: 2rem;
+    }
+
+    .grid-cols-1 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    @media (min-width: 768px) {
+
+        /* md */
+        .md\:grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (min-width: 1024px) {
+
+        /* lg */
+        .lg\:grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    .gap-6 {
+        /* Para la cuadrícula de categorías */
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+
+        /* md */
+        .md\:grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    @media (min-width: 1024px) {
+
+        /* lg */
+        .lg\:grid-cols-5 {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+    }
+
+    /* Estilos de las tarjetas de evento */
+    .event-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        /* rounded-xl */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        /* shadow-lg */
+        overflow: hidden;
+        position: relative;
+        transform: scale(1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .event-card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        /* hover:shadow-xl */
+    }
+
+    .event-image {
+        position: relative;
+        overflow: hidden;
+        height: 12rem;
+        /* h-48 */
+    }
+
+    .event-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
+        border-top-left-radius: 0.75rem;
+        /* rounded-t-xl */
+        border-top-right-radius: 0.75rem;
+        /* rounded-t-xl */
+    }
+
+    .event-card:hover .event-image img {
+        transform: scale(1.1);
+    }
+
+    .date-badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background-color: #F97316;
+        /* accent */
+        color: white;
+        font-size: 0.875rem;
+        /* text-sm */
+        font-weight: 700;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        /* rounded-full */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        /* shadow-md */
+        text-align: center;
+    }
+
+    .date-badge .block {
+        display: block;
+    }
+
+    .date-badge .text-2xl {
+        font-size: 1.5rem;
+    }
+
+    .date-badge .leading-none {
+        line-height: 1;
+    }
+
+    .date-badge .text-xs {
+        font-size: 0.75rem;
+    }
+
+    .date-badge .uppercase {
+        text-transform: uppercase;
+    }
+
+    .p-6 {
+        padding: 1.5rem;
+    }
+
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+
+    .font-semibold {
+        font-weight: 600;
+    }
+
+    .mb-2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .text-dark {
+        color: #1F2937;
+        /* Color oscuro para texto */
+    }
+
+    .text-gray-600 {
+        color: #4B5563;
+    }
+
+    .mr-2 {
+        margin-right: 0.5rem;
+    }
+
+    .mb-4 {
+        margin-bottom: 1rem;
+    }
+
+    .text-gray-700 {
+        color: #374151;
+    }
+
+    .text-sm {
+        font-size: 0.875rem;
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .bg-primary {
+        background-color: #2e8b57;
+    }
+
+    .hover\:bg-secondary:hover {
+        background-color: #2e8b57;
+        /* Un tono más claro de primary */
+    }
+
+    .text-white {
+        color: white;
+    }
+
+    .py-2 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .rounded-full {
+        border-radius: 9999px;
+    }
+
+    .transition {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+    }
+
+    .duration-300 {
+        transition-duration: 0.3s;
+    }
+
+    .ease-in-out {
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Estilos de las tarjetas de categoría */
+    .category-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        /* rounded-xl */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        /* shadow-lg */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        /* p-6 */
+        text-align: center;
+        transform: scale(1);
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        text-decoration: none;
+        /* Quitar subrayado de enlaces */
+    }
+
+    .category-card:hover {
+        transform: scale(1.05);
+        background-color: #2e8b57;
+        /* hover:bg-primary */
+        color: white;
+        /* hover:text-white */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        /* hover:shadow-xl */
+    }
+
+    .category-card i {
+        /* Iconos de categoría */
+        font-size: 3rem;
+        /* text-5xl */
+        margin-bottom: 1rem;
+        /* mb-4 */
+        color: #4F46E5;
+        /* text-primary */
+        transition: color 0.3s ease-in-out;
+    }
+
+    .category-card:hover i {
+        color: white;
+        /* group-hover:text-white */
+    }
+
+    .category-card h3 {
+        font-size: 1.25rem;
+        /* text-xl */
+        font-weight: 600;
+        color: #1F2937;
+        /* text-dark */
+        transition: color 0.3s ease-in-out;
+    }
+
+    .category-card:hover h3 {
+        color: white;
+        /* group-hover:text-white */
+    }
+
+    /* Estilos para eventos pasados */
+    .past-events .event-image img {
+        filter: grayscale(100%);
+        transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .past-events .event-card:hover .event-image img {
+        filter: grayscale(0%);
+    }
+
+    .hover\:underline:hover {
+        text-decoration: underline;
+    }
+
+    .ml-2 {
+        margin-left: 0.5rem;
+    }
+
+    /* Animación de aparición al hacer scroll (Scroll Reveal) */
+    .reveal-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal-item.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }

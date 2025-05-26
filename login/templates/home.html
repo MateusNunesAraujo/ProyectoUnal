@@ -10,7 +10,8 @@
 </head>
 
 <body>
-     <div class="fondo-dinamico">
+    {% csrf_token %}
+    <div class="fondo-dinamico">
         <div class="blob"></div>
         <div class="blob"></div>
         <div class="blob"></div>
@@ -18,35 +19,47 @@
     </div>
     <div>{% csrf_token %}</div>
     {% include "nabvar.html" %}
-
     <main>
-        <div class="cont-acciones-principales"> 
+        <div class="cont-acciones-principales">
             <h1>Bienvenido {{user.username}}</h1>
             <div class="acciones-container">
- <div class="input-container">
-                <input type="text" name="text" class="input" placeholder="Search something...">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24" class="icon">
-                    <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                    <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <rect fill="white" height="24" width="24"></rect>
-                        <path fill=""
-                            d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM9 11.5C9 10.1193 10.1193 9 11.5 9C12.8807 9 14 10.1193 14 11.5C14 12.8807 12.8807 14 11.5 14C10.1193 14 9 12.8807 9 11.5ZM11.5 7C9.01472 7 7 9.01472 7 11.5C7 13.9853 9.01472 16 11.5 16C12.3805 16 13.202 15.7471 13.8957 15.31L15.2929 16.7071C15.6834 17.0976 16.3166 17.0976 16.7071 16.7071C17.0976 16.3166 17.0976 15.6834 16.7071 15.2929L15.31 13.8957C15.7471 13.202 16 12.3805 16 11.5C16 9.01472 13.9853 7 11.5 7Z"
-                            clip-rule="evenodd" fill-rule="evenodd"></path>
-                    </g>
-                </svg>
-            </div>
-            </div>
-           
-        </div>
+                <div class="input-container">
+                    <input type="text" name="buscador_hotel" class="input" placeholder="Search something...">
+                    <button class="buscador_hotel">Buscar</button>
+                </div>
+                <div class="filtros-container">
+                    <div class="filtros-estrellas">
+                        <button data-estrella="1">1 ⭐</button>
+                        <button data-estrella="2">2 ⭐</button>
+                        <button data-estrella="3">3 ⭐</button>
+                        <button data-estrella="4">4 ⭐</button>
+                        <button data-estrella="5">5 ⭐</button>
+                        <button class="filtros-estrellas-activado" data-estrella="todos">Todos</button>
+                    </div>
+                    <div class="filtros-precios">
+                        <button data-rango="0-100000">$0 - $100K</button>
+                        <button data-rango="100001-200000">$100K - $200K</button>
+                        <button data-rango="200001-300000">$200K - $300K</button>
+                        <button data-rango="300001-mas">+$300K</button>
+                        <button class="filtros-precios-activado" data-rango="todos">Todos</button>
+                    </div>
 
+                </div>
+            </div>
+        </div>
         <div class="container-hotel">
             {% for item in informacion %}
             <div class="card-hotel">
                 <div class="container-informacion">
                     <div class="titulo">
                         <h2>{{ item.hotel.nombre }}</h2>
-                        <div class="container-estrellas"><img class="estrella" src="{% static "/img/iconos/estrella.png" %}" alt=""><img class="estrella" src="{% static "/img/iconos/estrella.png" %}" alt=""><img class="estrella" src="{% static "/img/iconos/estrella.png" %}" alt=""><img class="estrella" src="{% static "/img/iconos/estrella.png" %}" alt=""><img class="estrella" src="{% static "/img/iconos/estrella.png" %}" alt=""></div>
+                        <div class="container-estrellas">{% for i in item.hotel.estrellas_llenas %}
+        <img class="estrella" src="{% static 'img/iconos/estrella.png' %}" alt="Estrella">
+    {% endfor %}
+    {% for i in item.hotel.estrellas_vacias %}
+        <img class="estrella" src="{% static 'img/iconos/estrella_vacia.png' %}" alt="Estrella Vacía">
+    {% endfor %}
+                        </div>
                     </div>
                     <div class="informacion_rapida">
                         <p class="habitaciones">{{ item.hotel.habitaciones_libres}} habitaciones disponibles </p>
@@ -57,19 +70,19 @@
                 </div>
                 <div class="container-img">
                     {% for img in item.imagenes %}
-                        {% if forloop.first %}
-                            <img class="img-hotel" src="{{ img.imagen.url }}" alt="">
-                        {% endif %}
+                    {% if forloop.first %}
+                    <img class="img-hotel" src="{{ img.imagen.url }}" alt="">
+                    {% endif %}
                     {% endfor %}
                 </div>
                 <div class="informacion">
                     <div class="informacion_secundaria"><img class="iconos" src="{% static "/img/iconos/mensaje-destacado.png" %}" alt=""><img class="iconos" src="{% static "/img/iconos/igual-que.png" %}" alt=""></div>
-                    <button class="info-hotel" id_hotel="{{item.hotel.id}}" >Ver más</button>
+                    <button class="info-hotel" id_hotel="{{item.hotel.id}}">Ver más</button>
                 </div>
             </div>
             {% endfor %}
     </main>
-    <script src="{% static "/js/info_hoteles.js" %}"></script>
+    <script src="{% static "/js/home.js" %}"></script>
     <script src="{% static "/js/logout.js" %}"></script>
 </body>
 

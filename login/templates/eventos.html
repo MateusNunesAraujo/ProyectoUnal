@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="{% static '/css/eventos.css' %}">
+</head>
+
+<body>
+    {% include "nabvar.html" %}
+    <main class="container">
+    <section id="proximos-eventos" class="my-12 reveal-item">
+        <h2 class="text-4xl font-bold text-center text-primary mb-10">🎉 Próximos Eventos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://placehold.co/600x400/FFD700/000000?text=Festival+de+Música" alt="Festival de Música">
+                    <div class="date-badge">
+                        <span class="block text-2xl leading-none">15</span>
+                        <span class="block text-xs uppercase">Jul</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-dark">Festival de Música de Verano</h3>
+                    <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt mr-2 text-primary"></i>Plaza Central</p>
+                    <p class="text-gray-600 mb-4"><i class="fas fa-clock mr-2 text-primary"></i>19:00 - 23:00</p>
+                    <p class="text-gray-700 text-sm mb-4">Disfruta de una noche mágica con bandas locales y artistas invitados. ¡Música en vivo para todos los gustos!</p>
+                    <a href="{% url 'info_eventos' %}" class=" inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out">
+                        Más Detalles
+                    </a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://placehold.co/600x400/8B4513/FFFFFF?text=Feria+Artesanal" alt="Feria Artesanal">
+                    <div class="date-badge">
+                        <span class="block text-2xl leading-none">22</span>
+                        <span class="block text-xs uppercase">Jul</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-dark">Feria Artesanal del Pueblo</h3>
+                    <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt mr-2 text-primary"></i>Parque Principal</p>
+                    <p class="text-gray-600 mb-4"><i class="fas fa-clock mr-2 text-primary"></i>10:00 - 18:00</p>
+                    <p class="text-gray-700 text-sm mb-4">Explora creaciones únicas de nuestros talentosos artesanos locales. ¡Encuentra el regalo perfecto!</p>
+                    <a href="{% url 'info_eventos' %}" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out">
+                        Más Detalles
+                    </a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="https://placehold.co/600x400/4682B4/FFFFFF?text=Noche+de+Cine" alt="Noche de Cine al Aire Libre">
+                    <div class="date-badge">
+                        <span class="block text-2xl leading-none">05</span>
+                        <span class="block text-xs uppercase">Ago</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-dark">Noche de Cine al Aire Libre</h3>
+                    <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt mr-2 text-primary"></i>Cancha de Fútbol</p>
+                    <p class="text-gray-600 mb-4"><i class="fas fa-clock mr-2 text-primary"></i>20:30</p>
+                    <p class="text-gray-700 text-sm mb-4">Trae tu silla y disfruta de una película bajo las estrellas. ¡Una experiencia familiar inolvidable!</p>
+                    <a href="{% url 'info_eventos' %}" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out">
+                        Más Detalles
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="categorias" class="my-12 reveal-item">
+        <h2 class="text-4xl font-bold text-center text-primary mb-10">Explora por Categorías</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+            <a href="#" data-category="musica" class="category-card">
+                <i class="fas fa-music"></i>
+                <h3 class="text-xl font-semibold">Música</h3>
+            </a>
+
+            <a href="#" data-category="gastronomia" class="category-card">
+                <i class="fas fa-utensils"></i>
+                <h3 class="text-xl font-semibold">Gastronomía</h3>
+            </a>
+
+            <a href="#" data-category="arte" class="category-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3 class="text-xl font-semibold">Arte y Cultura</h3>
+            </a>
+
+            <a href="#" data-category="deporte" class="category-card">
+                <i class="fas fa-futbol"></i>
+                <h3 class="text-xl font-semibold">Deporte</h3>
+            </a>
+
+            <a href="#" data-category="comunidad" class="category-card">
+                <i class="fas fa-users"></i>
+                <h3 class="text-xl font-semibold">Comunidad</h3>
+            </a>
+
+        </div>
+    </section>
+
+    <section id="eventos-pasados" class="my-12 reveal-item">
+        <h2 class="text-4xl font-bold text-center text-primary mb-10">✨ Momentos que Recordamos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="event-card past-events">
+                <div class="event-image">
+                    <img src="https://placehold.co/600x400/A9A9A9/FFFFFF?text=Festival+Flores+2023" alt="Festival de las Flores 2023">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-dark">Festival de las Flores 2023</h3>
+                    <p class="text-gray-600 mb-4">Fecha: 10-12 Mayo 2023</p>
+                    <p class="text-gray-700 text-sm mb-4">Un derroche de color y alegría en nuestra celebración anual. ¡Revive los mejores momentos!</p>
+                    <a href="#" class="inline-block text-primary hover:underline font-bold transition duration-300 ease-in-out">
+                        Ver Galería <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="event-card past-events">
+                <div class="event-image">
+                    <img src="https://placehold.co/600x400/A9A9A9/FFFFFF?text=Mercado+Navideño+2022" alt="Mercado Navideño 2022">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-dark">Mercado Navideño 2022</h3>
+                    <p class="text-gray-600 mb-4">Fecha: Diciembre 2022</p>
+                    <p class="text-gray-700 text-sm mb-4">Luces, regalos y espíritu festivo. Un recuerdo de la magia navideña en el pueblo.</p>
+                    <a href="#" class="inline-block text-primary hover:underline font-bold transition duration-300 ease-in-out">
+                        Ver Galería <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+    <script src="{% static '/js/eventos.js' %}"></script>
+    <script src="{% static "/js/logout.js" %}"></script>
+</body>
+
+</html>

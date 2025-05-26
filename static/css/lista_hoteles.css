@@ -190,75 +190,96 @@ ul a:hover::after {
     min-height: 0;
 }
 
-/* From Uiverse.io by javierBarroso */ 
+.elimacion-exitosa{
+    position: absolute;
+    bottom: 20rem;
+    width: 100%;
+}
+
+.elimacion-exitosa p{
+    display: none;
+    pointer-events: none;
+    background-color: #df3d3d;
+    color: #fff;
+    padding: 1.2rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 350px;
+    box-shadow: 0 2px 8px rgba(223, 61, 61, 0.15);
+    border: 2px solid #b71c1c;
+}
+
+/* From Uiverse.io by javierBarroso */
 .button {
-  position: relative;
-  width: 4em;
-  height: 4em;
-  border: none;
-  background: rgba(180, 83, 107, 0.11);
-  border-radius: 5px;
-  transition: background 0.5s;
+    position: relative;
+    width: 4em;
+    height: 4em;
+    border: none;
+    background: rgba(180, 83, 107, 0.11);
+    border-radius: 5px;
+    transition: background 0.5s;
 }
 
 .X {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 2em;
-  height: 1.5px;
-  background-color: rgb(255, 255, 255);
-  transform: translateX(-50%) rotate(45deg);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2em;
+    height: 1.5px;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%) rotate(45deg);
 }
 
 .Y {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 2em;
-  height: 1.5px;
-  background-color: #fff;
-  transform: translateX(-50%) rotate(-45deg);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2em;
+    height: 1.5px;
+    background-color: #fff;
+    transform: translateX(-50%) rotate(-45deg);
 }
 
 .close {
-  position: absolute;
-  display: flex;
-  padding: 0.8rem 1.5rem;
-  align-items: center;
-  justify-content: center;
-  transform: translateX(-50%);
-  top: -70%;
-  left: 50%;
-  width: 3em;
-  height: 1.7em;
-  font-size: 12px;
-  background-color: rgb(19, 22, 24);
-  color: rgb(187, 229, 236);
-  border: none;
-  border-radius: 3px;
-  pointer-events: none;
-  opacity: 0;
+    position: absolute;
+    display: flex;
+    padding: 0.8rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    top: -70%;
+    left: 50%;
+    width: 3em;
+    height: 1.7em;
+    font-size: 12px;
+    background-color: rgb(19, 22, 24);
+    color: rgb(187, 229, 236);
+    border: none;
+    border-radius: 3px;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .button:hover {
-  background-color: rgb(211, 21, 21);
+    background-color: rgb(211, 21, 21);
 }
 
 .button:active {
-  background-color: rgb(130, 0, 0);
+    background-color: rgb(130, 0, 0);
 }
 
-.button:hover > .close {
-  animation: close 0.2s forwards 0.25s;
+.button:hover>.close {
+    animation: close 0.2s forwards 0.25s;
 }
 
 @keyframes close {
-  100% {
-    opacity: 1;
-  }
+    100% {
+        opacity: 1;
+    }
 }
 
 
