@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from eventos.views import *
 from login.views import *
-from register.views import register_view
+from register.views import *
 from hoteles.views import *
-#Linea de codigo funcionales en etapa de DESARROLLO 
+#Linea de codigo funcionales solamente en etapa de DESARROLLO 
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',login_view,name='login'),
     path('register/',register_view, name="register"),  # URL para la vista de registro
+    path('create-user/',create_user, name="create-user"),  # URL para la vista de registro
     path('home/',home, name="home"),  # URL para la vista de inicio
     path("hoteles_registro/", home_hoteles_view, name="home_hoteles"),
     path('lista_hoteles/', lista_hoteles_view, name='lista_hoteles'),
@@ -37,8 +39,13 @@ urlpatterns = [
     path('buscar_hotel/<str:nombre>/',buscar_hotel, name='buscar_hotel'),
     path("info_hoteles/<int:hotel_id>/", info_hoteles, name="info_hoteles"),
     path("filtrar/",filtrar, name="filtrar"),
-    path("info_eventos/", info_eventos, name="info_eventos"),
     path('eventos/',eventos, name='eventos'),
+    path('galeria-eventos/<int:n>',galeria_eventos, name='galeria-eventos'),
+    path("info_eventos/<int:id>", info_eventos, name="info_eventos"),
+    path("like/", like, name="like"),
+    path("create-comentarios/", create_comentarios, name="create-comentarios"),
+    path("delete-comentarios/<int:id>/<int:hotel_id>/", delete_comentarios, name="delete-comentarios"),
+    path("nosotros/", nosotros_view, name="nosotros"),
     path('logout/',logout_view, name="logout")  # URL para la vista de login
 ]
 

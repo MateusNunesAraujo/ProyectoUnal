@@ -1,0 +1,309 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Momentos Recordados</title>
+    <link rel="shortcut icon" href="{% static '/img/iconos/logo_alt.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/info_leticia.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+        <a class="salir" href="javascript:history.back()">
+            <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Regresar</span>
+        </a>
+        <h1 class="section-title">📸 Galería de Momentos Recordados 📸</h1>
+
+        <div class="description-content">
+            <h2>Leticia: El Corazón del Amazonas Colombiano</h2>
+            <p>
+                Sumérgete en la vibrante historia de <span class="text-highlight">Leticia</span>, una ciudad que late al
+                ritmo de la selva y el majestuoso río Amazonas. Fundada en <span class="text-highlight">1867</span> como
+                un humilde asentamiento fronterizo, Leticia emergió de la tierra roja y fértil, marcando el punto de
+                encuentro de tres naciones hermanas: <span class="text-highlight">Colombia, Brasil y Perú</span>.
+            </p>
+            <img src="{% static 'img/img/Leticia.jpg' %}" alt="Vista panorámica de Leticia" class="description-image">
+            <p>
+                Durante décadas, la vida en Leticia giró en torno a la esencia amazónica: la pesca, la riqueza maderera
+                y la sabiduría ancestral de la medicina natural. Siempre enmarcada por un profundo respeto y una
+                convivencia armónica con la selva, esta ciudad se forjó como un crisol de culturas indígenas milenarias,
+                exploradores audaces, colonos y comerciantes.
+            </p>
+
+            <h3>Un Mosaico Cultural Vibrante</h3>
+            <p>
+                Con el paso del tiempo, Leticia floreció, transformándose en una ciudad multicultural y vibrante. Aquí,
+                las tradiciones cobran vida al compás de los tambores ancestrales, los San Pedros se tiñen de alegría
+                con pañuelos rojos y sombreros vaqueros, y la inmensa biodiversidad del Amazonas se respira en cada
+                rincón.
+            </p>
+            <div class="quote-box">
+                "Hoy, esta ciudad amazónica no solo es un destino turístico, sino también un símbolo de resistencia
+                ecológica y riqueza cultural."
+            </div>
+
+            <h3>Ciencia de la Computación: Un Puente hacia el Futuro Sostenible</h3>
+            <p>
+                En este nuevo siglo, la ciencia de la computación se erige como una herramienta poderosa para impulsar a
+                Leticia hacia horizontes aún más prometedores. Visualizamos un futuro donde la tecnología y la sabiduría
+                ancestral caminen de la mano, forjando un desarrollo sostenible y respetuoso con el entorno.
+            </p>
+            <img src="{% static 'img/img/prog.jpg' %}"
+                alt="Tecnología y Naturaleza" class="description-image">
+            <ul>
+                <li>
+                    <p>Monitoreo inteligente de la biodiversidad para la conservación.</p>
+                </li>
+                <li>
+                    <p>Desarrollo de plataformas educativas adaptadas a comunidades indígenas.</p>
+                </li>
+                <li>
+                    <p>Impulso del ecoturismo a través de soluciones digitales innovadoras.</p>
+                </li>
+                <li>
+                    <p>Creación de redes de información que conecten esta región remota con el mundo.</p>
+                </li>
+            </ul>
+            <p>
+                Estudiar ciencias de la computación en contextos como Leticia trasciende el mero aprendizaje de la
+                programación; es una invitación a <span class="text-highlight">diseñar un futuro sostenible</span>,
+                donde la profunda sabiduría de la selva y la innovación tecnológica converjan en armonía.
+            </p>
+        </div>
+        <p style="text-align: center; margin-bottom: 2rem; color: var(--color-gray-700);">
+            Revive los mejores momentos del pasados. Haz clic en cualquier imagen para verla en grande.
+        </p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="{% static 'img/img/1.webp' %}" alt="Leticia 60" data-full-src="{% static 'img/img/1.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>AEROPUERTO DE LETICIA EN LOS AÑOS 60</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/2.webp' %}" alt="Leticia en los 60"
+                    data-full-src="{% static 'img/img/2.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>INERIOR DEL AEROPUERTO.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/3.webp' %}" alt="Leticia en los 60"
+                    data-full-src="{% static 'img/img/3.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>INERIOR DEL AEROPUERTO.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/4.webp' %}" alt="Leticia en los 60"
+                    data-full-src="{% static 'img/img/4.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>CAFETERÍA DEL AEROPUERTO.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/5.webp' %}" alt="leticia en los 60"
+                    data-full-src="{% static 'img/img/5.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>LA PISTA EN LOS AÑOS 60</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/6.webp' %}" alt="Leticia en los 60"
+                    data-full-src="{% static 'img/img/6.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>LA PISTA EN LOS AÑOS 60</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/7.webp' %}" alt="FESTA 2024" data-full-src="{% static 'img/img/7.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>LETICIA EN LOS AÑOS 60.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/8.webp' %}" alt="FESTA 2024" data-full-src="{% static 'img/img/8.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>LETICIA.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/9.webp' %}" alt="FESTA 2024" data-full-src="{% static 'img/img/9.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p> LETICIA.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/10.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/10.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>LETICIA.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/11.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/11.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>LETICIA.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/12.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/12.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>LETICIA.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/13.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/13.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>LETICIA EN LA TEMPORADA DEL AGUA GRANDE.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/14.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/14.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>LETICIA.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/15.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/15.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>PARQUE SANTANDER AÑOS 60</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/16.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/16.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>PARQUE SANTANDER AÑO 2010</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/17.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/17.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>IGLESIA DE LETICIA.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/18.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/18.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>MONUMENTO DE SANTANDER.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/19.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/19.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>ENTRADA A MARCO Y TABATINGA.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/20.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/20.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>ENTRADA A MARCO Y TABATINGA.</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/21.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/21.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>FRONTERA COLOMBIANA (LETICIA) CON LA BRASILERA (TABATINGA)</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/22.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/2.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Tabatinga - Amazonas</h3>
+                    <p>TABATINGA BRASIL</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/23.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/23.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>Foto familiar</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'img/img/24.webp' %}" alt="FESTA 2024"
+                    data-full-src="{% static 'img/img/24.webp' %}">
+                <div class="gallery-overlay">
+                    <h3>Leticia - Amazonas</h3>
+                    <p>Grupo de Uitotos</p>
+                    <span class="icon icon-search" style="font-size: 2rem; margin-top: 0.5rem;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="image-modal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <script src="{% static '/js/info_leticia.js' %}"></script>
+</body>
+
+</html>

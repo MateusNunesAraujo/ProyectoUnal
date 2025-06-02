@@ -1,18 +1,50 @@
 {% load static %}
-<nav>
+ <input id="checkbox" type="checkbox">
+    <label class="toggle desactivado" for="checkbox">
+        <div id="bar1" class="bars"></div>
+        <div id="bar2" class="bars"></div>
+        <div id="bar3" class="bars"></div>
+    </label>
+<div id="menu-celular"> 
+  <a href="#"><img class="logo" src="{% static "img/iconos/logo.png" %}" alt=""></a>
+</div>
+<div id="cont-menu">
+        
+</div>
+        <nav id="nav-celular">
+                <ul>
+                        <li><img class="iconos-nav" src="{% static 'img/iconos/hogar.png' %}" alt=""><a href="{% url "home" %}">Inicio</a></li>
+                        <li><img class="iconos-nav" src="{% static 'img/iconos/eventos.png' %}" alt=""><a
+                                href="{% url "eventos" %}">Eventos</a></li>
+                        <li><img class="iconos-nav" src="{% static 'img/iconos/escritorio.png' %}" alt=""><a href="#">Servicios</a>
+                        </li>
+                        <li><img class="iconos-nav" src="{% static 'img/iconos/centro-de-llamadas.png' %}" alt=""><a
+                                href="#">Ayuda</a></li>
+                        <li><img class="iconos-nav" src="{% static 'img/iconos/exito.png' %}" alt=""><a href="{% url 'nosotros' %}">Acerca de
+                        nosotros</a></li>
+                        <li id="logout-celular">Cerrar Sesión</li>
+                </ul>
+                <div>
+                        <img class="animales" src="{% static 'img/img/animales.png' %}" alt="">
+                </div>
+        </nav>
+
+
+
+<nav id="nav-computador">
         <ul>
-            <li><img class="iconos-nav" src="{% static "img/iconos/hogar.png" %}" alt=""><a href="{% url "home" %}">Home</a></li>
-            <li><img class="iconos-nav" src="{% static "img/iconos/eventos.png" %}" alt=""><a
+            <li><img class="iconos-nav" src="{% static 'img/iconos/hogar.png' %}" alt=""><a href="{% url "home" %}">Inicio</a></li>
+            <li><img class="iconos-nav" src="{% static 'img/iconos/eventos.png' %}" alt=""><a
                     href="{% url "eventos" %}">Eventos</a></li>
-            <li><img class="iconos-nav" src="{% static "img/iconos/escritorio.png" %}" alt=""><a href="#">Servicios</a>
+            <li><img class="iconos-nav" src="{% static 'img/iconos/escritorio.png' %}" alt=""><a href="#">Servicios</a>
             </li>
-            <li><img class="iconos-nav" src="{% static "img/iconos/centro-de-llamadas.png" %}" alt=""><a
+            <li><img class="iconos-nav" src="{% static 'img/iconos/centro-de-llamadas.png' %}" alt=""><a
                     href="#">Ayuda</a></li>
-            <li><img class="iconos-nav" src="{% static "img/iconos/exito.png" %}" alt=""><a href="#">Acerca de
-                    nostros</a></li>
+            <li><img class="iconos-nav" src="{% static 'img/iconos/exito.png' %}" alt=""><a href="{% url 'nosotros' %}">Acerca de
+                    nosotros</a></li>
         </ul>
         <div class="logout">
             <button id="logout">Cerrar Sesión</button>
-            <a href="#">Hoteles UNAL</a>
+            <a href="#"><img class="logo" src="{% static "img/iconos/logo.png" %}" alt=""></a>
         </div>
     </nav>

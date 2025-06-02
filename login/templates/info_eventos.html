@@ -5,12 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos</title>
+    <title>Evento - {{evento.nombre}}</title>
+    <link rel="shortcut icon" href="{% static '/img/iconos/logo_alt.ico' %}" />
     <link rel="stylesheet" href="{% static '/css/info_eventos.css' %}">
 </head>
 
 <body>
-
+    {% csrf_token %}
     <div class="container">
         <button class="salir">
   <span class="circle" aria-hidden="true">
@@ -19,46 +20,45 @@
   <span class="button-text">Regresar</span>
 </button>
 
-        <img src="https://placehold.co/900x400/4F46E5/FFFFFF?text=Imagen+del+Evento" alt="Imagen del Evento" class="event-detail-image">
-
-        <h1 class="event-title">Nombre del Evento Aquí</h1>
+        <img src="{{evento.imagen_secundaria.url}}" alt="Imagen del Evento" class="event-detail-image">
+        <div class="container-titulo">
+            <h1 class="event-title">{{evento.nombre}}</h1>
+            <button class="Btn">
+            <span class="leftContainer" id-evento="{{evento.id}}">
+                <svg fill="white" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"></path></svg>
+                <span class="like">Like</span>
+            </span>
+            <span class="likeCount">
+                {{total_like}}
+            </span>
+        </button>
+        </div>
+        
+        
 
         <div class="event-meta">
             <div class="event-meta-item">
-                <span class="icon icon-calendar"></span>
-                <span>Fecha: 15 de Julio de 2025</span>
+                <span>🗓️ Fecha: {{evento.fecha|date:"d"}} de {{evento.fecha|date:"M"}} de {{evento.fecha|date:"Y"}}</span>
             </div>
             <div class="event-meta-item">
-                <span class="icon icon-clock"></span>
-                <span>Hora: 19:00 - 23:00</span>
+                <span>🕑 Hora: {{evento.hora_inicio}} - {{evento.hora_fin}}</span>
             </div>
             <div class="event-meta-item">
-                <span class="icon icon-map-marker"></span>
-                <span>Ubicación: Plaza Central, [Nombre del Pueblo]</span>
+                <span> 📌 Ubicación: {{evento.ubicacion}}</span>
             </div>
         </div>
 
         <div class="event-description">
             <h3>Sobre este evento</h3>
             <p>
-                Este es un espacio para la descripción detallada del evento. Aquí puedes incluir
-                información sobre los artistas, el programa, actividades especiales, requisitos
-                de entrada, y cualquier otro detalle relevante.
-            </p>
-            <p>
-                Por ejemplo, si es un festival de música, podrías listar las bandas que se presentarán,
-                los géneros musicales, y si habrá venta de comida y bebida. Si es una feria artesanal,
-                menciona el tipo de productos que se podrán encontrar y si hay talleres.
-            </p>
-            <p>
-                ¡No olvides añadir un tono entusiasta para animar a la gente a participar!
+              {{evento.descripcion_larga}}
             </p>
         </div>
 
         <div class="event-map">
             <h3>Cómo llegar</h3>
             <div class="map-placeholder">
-                [Aquí iría un mapa interactivo (ej. Google Maps iframe) o indicaciones detalladas]
+             {{ evento.iframe_mapa|safe }}
             </div>
             <p class="text-sm mt-2 text-gray-600 text-center">
                 Puedes encontrar el lugar fácilmente en el mapa. ¡Te esperamos!

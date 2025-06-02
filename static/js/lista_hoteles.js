@@ -23,6 +23,7 @@ document.querySelectorAll(".btn-informacion").forEach(e => {
                 template = ''
                 estrellas = ''
                 document.querySelector('.main-oculto header h1').textContent = "Hotel " + data.nombre
+                document.querySelector('#precio').textContent = "Precio: " + data.precio + "$"
                 document.querySelector('#precio_noche').textContent = "Precio por noche: " + data.precio_noche + "$"
                 document.querySelector('.informacion-1').innerHTML = `<p>${data.descripcion}</p>`
                 console.log(data.estrellas)
@@ -31,7 +32,6 @@ document.querySelectorAll(".btn-informacion").forEach(e => {
                 }
                 document.querySelector('.cont-estrellas').innerHTML = estrellas
                 document.querySelector('#ubicacion').textContent = "Ubicación: " + data.ubicacion
-                document.querySelector('#resenas').textContent = "Reseñas: " + data.resenas
                 document.querySelector('#habitaciones').textContent = "Habitaciones: " + data.habitaciones
                 document.querySelector('#habitaciones_libres').textContent = "Habitaciones libres: " + data.habitaciones_libres
                 data.img_urls.forEach(element => {

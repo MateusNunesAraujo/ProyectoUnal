@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/create_hotel.css' %}">
+  <link rel="shortcut icon" href="{% static '/img/iconos/logo_alt.ico' %}" />
   <title>Creando hotel</title>
 </head>
 
@@ -16,7 +17,10 @@
       <label for="nombre">Nombre del hotel:</label>
       <input type="text" id="nombre" name="nombre" maxlength="30" required>
     </div>
-
+    <div class="inputs">
+      <label for="precio">Precio:</label>
+      <input type="number" id="precio" name="precio" step="0.01" min="0" required>
+    </div>
     <div class="inputs">
       <label for="precio_noche">Precio por noche:</label>
       <input type="number" id="precio_noche" name="precio_noche" step="0.01" min="0" required>
@@ -36,12 +40,6 @@
       <label for="ubicacion">Ubicación:</label>
       <textarea id="ubicacion" name="ubicacion" required></textarea>
     </div>
-
-    <div class="inputs">
-      <label for="resenas">Reseñas:</label>
-      <input type="number" id="resenas" name="resenas" min="0" required>
-    </div>
-
     <div class="inputs">
       <label for="habitaciones">Habitaciones:</label>
       <input type="number" id="habitaciones" name="habitaciones" min="0" required>

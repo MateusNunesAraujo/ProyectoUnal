@@ -29,7 +29,7 @@ function filtrar(informacion) {
                     </div>
                     <div class="informacion_rapida">
                         <p class="habitaciones">${element.habitaciones_libres} habitaciones disponibles </p>
-                        <p class="precio"> Desde ${element.precio_noche} COP por noche </p>
+                        <p class="precio"> Desde ${element.precio} COP </p>
                         <p class="valoracion">⭐ ${element.estrellas}/5 (${element.resenas} reseñas)</p>
                     </div>
 

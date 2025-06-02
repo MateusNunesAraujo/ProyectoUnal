@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-(ye567v-u^&8c+x4n+gx8i!_b_*2sfrr%zg*k%^bb1smo37!c&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+#---------------------Quitar estas lineas de codigo --------------------- 
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+    'https://1a61-2803-9810-6211-ef10-add5-994a-a71-5ae0.ngrok-free.app',
+]
+#------------------------------------------------
 
 # Application definition
 
@@ -39,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'login',
     'hoteles',
-    'register'
+    'register',
+    'eventos'
 ]
 
 MIDDLEWARE = [
@@ -130,6 +135,7 @@ import os
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#Modelo usuario "personalizado"
 AUTH_USER_MODEL = 'login.User'
 
 LOGIN_REDIRECT_URL = "/home/"  # Redirige después de iniciar sesión

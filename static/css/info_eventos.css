@@ -1,6 +1,9 @@
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #F3F4F6;
+    /* background-color: #F3F4F6; */
+    background-image: url("../img/img/fondo_i.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     /* Color de fondo claro */
     margin: 0;
     padding: 0;
@@ -9,93 +12,169 @@ body {
     /* Color oscuro para texto */
 }
 
+.container-titulo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+    gap: 35px;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+/* From Uiverse.io by vinodjangid07 */
+.Btn {
+    width: 140px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.089);
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.leftContainer {
+    width: 60%;
+    height: 100%;
+    background-color: rgb(238, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.leftContainer .like {
+    color: white;
+    font-weight: 600;
+}
+
+.likeCount {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(238, 0, 0);
+    font-weight: 600;
+    position: relative;
+    background-color: white;
+}
+
+.likeCount::before {
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    content: "";
+    background-color: rgb(255, 255, 255);
+    transform: rotate(45deg);
+    left: -4px;
+}
+
+.Btn:hover .leftContainer {
+    background-color: rgb(219, 0, 0);
+}
+
+.Btn:active .leftContainer {
+    background-color: rgb(201, 0, 0);
+}
+
+.Btn:active .leftContainer svg {
+    transform: scale(1.15);
+    transform-origin: top;
+}
+
+
 button {
- position: relative;
- display: inline-block;
- cursor: pointer;
- outline: none;
- border: 0;
- vertical-align: middle;
- text-decoration: none;
- background: transparent;
- padding: 0;
- font-size: inherit;
- font-family: inherit;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
 }
 
 button.salir {
- width: 12rem;
- height: auto;
- margin-bottom: 1rem;
+    width: 12rem;
+    height: auto;
+    margin-bottom: 1rem;
 }
 
 button.salir .circle {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: relative;
- display: block;
- margin: 0;
- width: 3rem;
- height: 3rem;
- background: #282936;
- border-radius: 1.625rem;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #282936;
+    border-radius: 1.625rem;
 }
 
 button.salir .circle .icon {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: absolute;
- top: 0;
- bottom: 0;
- margin: auto;
- background: #fff;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
 }
 
 button.salir .circle .icon.arrow {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- left: 0.625rem;
- width: 1.125rem;
- height: 0.125rem;
- background: none;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
 }
 
 button.salir .circle .icon.arrow::before {
- position: absolute;
- content: "";
- top: -0.29rem;
- right: 0.0625rem;
- width: 0.625rem;
- height: 0.625rem;
- border-top: 0.125rem solid #fff;
- border-right: 0.125rem solid #fff;
- transform: rotate(45deg);
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
 }
 
 button.salir .button-text {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- padding: 0.75rem 0;
- margin: 0 0 0 1.85rem;
- color: #282936;
- font-weight: 700;
- line-height: 1.6;
- text-align: center;
- text-transform: uppercase;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 button:hover .circle {
- width: 100%;
+    width: 100%;
 }
 
 button:hover .circle .icon.arrow {
- background: #fff;
- transform: rotate(180deg);
+    background: #fff;
+    transform: rotate(180deg);
 }
 
 button:hover .button-text {
- color: #fff;
+    color: #fff;
 }
 
 
@@ -124,7 +203,7 @@ button:hover .button-text {
 .event-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #4F46E5;
+    color: #2e8b57;
     /* Color primario */
     margin-bottom: 1rem;
     text-align: center;
@@ -162,7 +241,7 @@ button:hover .button-text {
 .event-description h3 {
     font-size: 1.75rem;
     font-weight: 600;
-    color: #4F46E5;
+    color: #2e8b57;
     margin-bottom: 1rem;
 }
 
@@ -180,24 +259,30 @@ button:hover .button-text {
 .event-map h3 {
     font-size: 1.75rem;
     font-weight: 600;
-    color: #4F46E5;
+    color: #2e8b57;
     margin-bottom: 1rem;
 }
 
 .map-placeholder {
     width: 100%;
-    height: 300px;
-    background-color: #E5E7EB;
-    /* gray-200 */
-    border-radius: 0.5rem;
+    max-width: 600px;
+    /* o el valor que prefieras */
+    height: 350px;
+    /* ajusta según tu diseño */
+    margin: 0 auto;
+    background: #e5e8ec;
+    border-radius: 12px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6B7280;
-    /* gray-500 */
-    font-size: 1.25rem;
-    border: 1px dashed #9CA3AF;
-    /* gray-400 */
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
 }
 
 /* Botón de regreso */
@@ -267,6 +352,11 @@ button:hover .button-text {
 
 /* Responsividad básica */
 @media (max-width: 768px) {
+    .container-titulo {
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .container {
         margin: 1rem;
         padding: 1rem;

@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Hoteles</title>
-    <link rel="stylesheet" href="{% static "/css/home.css" %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static '/css/navbar.css' %}">
+    <link rel="shortcut icon" href="{% static '/img/iconos/logo_alt.ico' %}" />
 </head>
 
 <body>
@@ -24,7 +26,7 @@
             <h1>Bienvenido {{user.username}}</h1>
             <div class="acciones-container">
                 <div class="input-container">
-                    <input type="text" name="buscador_hotel" class="input" placeholder="Search something...">
+                    <input type="text" name="buscador_hotel" class="input" placeholder="Buscar hotel por nombre...">
                     <button class="buscador_hotel">Buscar</button>
                 </div>
                 <div class="filtros-container">
@@ -63,8 +65,14 @@
                     </div>
                     <div class="informacion_rapida">
                         <p class="habitaciones">{{ item.hotel.habitaciones_libres}} habitaciones disponibles </p>
-                        <p class="precio"> Desde {{ item.hotel.precio_noche}} COP por noche </p>
-                        <p class="valoracion">⭐ {{ item.hotel.estrellas}}/5 ({{ item.hotel.resenas}} reseñas)</p>
+                        <p class="precio"> Desde {{ item.hotel.precio}} COP </p>
+                        <p class="valoracion">⭐ {{ item.hotel.estrellas}}/5 
+                            {% if item.hotel.resenas %}
+                            ({{ item.hotel.resenas}} reseñas)
+                            {% else %}
+                             (0 reseñas)
+                            {% endif %}
+                        </p>
                     </div>
 
                 </div>
@@ -76,7 +84,7 @@
                     {% endfor %}
                 </div>
                 <div class="informacion">
-                    <div class="informacion_secundaria"><img class="iconos" src="{% static "/img/iconos/mensaje-destacado.png" %}" alt=""><img class="iconos" src="{% static "/img/iconos/igual-que.png" %}" alt=""></div>
+                    <div class="informacion_secundaria"><img class="iconos" src="{% static "/img/iconos/mensaje-destacado.png" %}" alt=""></div>
                     <button class="info-hotel" id_hotel="{{item.hotel.id}}">Ver más</button>
                 </div>
             </div>
@@ -84,6 +92,7 @@
     </main>
     <script src="{% static "/js/home.js" %}"></script>
     <script src="{% static "/js/logout.js" %}"></script>
+    <script src="{% static "/js/navbar.js" %}"></script>
 </body>
 
 </html>

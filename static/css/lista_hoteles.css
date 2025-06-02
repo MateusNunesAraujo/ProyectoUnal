@@ -23,6 +23,37 @@ nav {
 
 }
 
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logout button {
+    background-color: #ff6347;
+    /* Un rojo anaranjado para "Cerrar Sesión" */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(255, 99, 71, 0.2);
+}
+
+.logout button:hover {
+    background-color: #e5533d;
+    /* Rojo más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+
+.logo {
+width: 6.8rem;
+}
+
 .iconos-nav {
     width: 30px;
     height: 30px;
@@ -71,8 +102,12 @@ ul a:hover::after {
 .logout {
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 
+#logout{
+height: 3rem;
+}
 .sesion-exito {
     background-color: #e6ffed;
     border: 1.5px solid #34c759;
@@ -124,6 +159,7 @@ ul a:hover::after {
     display: flex;
     gap: 5px;
     flex-direction: column;
+    max-width: 200px;
 }
 
 .icon img {

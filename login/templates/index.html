@@ -1,4 +1,4 @@
-{% load static %}
+<!-- {% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static '/img/iconos/logo_alt.ico' %}" />
     <link rel="stylesheet" href="{% static '/css/main.css' %}">
-    <title>Document</title>
+    <title>LetiTour - Inicio de Sesión</title>
 </head>
 
 <body>
@@ -36,13 +37,62 @@
             <button id="send" type="submit">Iniciar sesion</button>
         </main>
         <footer>
-            <p>¿Se te olvido la contrseña? <a href="#">click aquí</a></p>
+            <p>¿Se te olvido la contraseña? <a href="#">click aquí</a></p>
         </footer>
     </form>
-    <script src="{% static " /js/main.js" %}"></script>
-
+    <script src="{% static "/js/main.js" %}"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
+</body>
+
+</html> -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static '/img/iconos/logo_alt.ico' %}" />
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <title>LetiTour - Inicio de Sesión</title>
+</head>
+
+<body>
+    <div class="parrot-container">
+        <dotlottie-player src="https://lottie.host/ae0b3582-22ff-4033-8560-1a22ef2173e7/jIArwMXcBX.lottie"
+            background="transparent" speed="1" loop autoplay class="loro-volador" id="parrot"></dotlottie-player>
+        <span class="parrot-message" id="parrotMessage">¡Hola!</span>
+    </div>
+
+    <div class="register"><button>Registrarse</button></div>
+    <form id="login" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <main>
+            <h2>Login</h2>
+            <div class="input-container">
+                <input name="email" type="text" class="input" required="">
+                <label for="input" class="label">Correo Electrónico</label>
+                <div class="underline"></div>
+            </div>
+            <div>
+
+            </div>
+            <div class="input-container">
+                <input name="password" type="text" class="input" required="">
+                <label for="input" class="label">Contraseña</label>
+                <div class="underline"></div>
+            </div>
+            <p class="login-error">{{error}}</p>
+            <button id="send" type="submit">Iniciar sesion</button>
+        </main>
+        <footer>
+            <p>¿Se te olvido la contraseña? <a href="#">click aquí</a></p>
+        </footer>
+    </form>
+    <script src="{% static "/js/main.js" %}"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 
 </html>

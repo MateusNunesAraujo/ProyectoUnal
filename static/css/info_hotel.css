@@ -1,274 +1,506 @@
 /* Fuentes */
 body {
-    font-family: "Inter", sans-serif;
-    margin: 0;
-    background-color: #f0f8f8;
-    /* Fondo suave */
-    color: #333;
-    line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  background-image: url("../img/img/fondo_i.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f0f8f8;
+  /* Fondo suave */
+  color: #333;
+  line-height: 1.6;
 }
 
 /* Contenedor principal */
 .hotel-detail-container {
-    max-width: 900px;
-    margin: 3rem auto;
-    background-color: #ffffff;
-    border-radius: 1rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 /* Sección de encabezado del hotel */
 .hotel-header {
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
 }
 
 .hotel-header h1 {
-    font-size: 2.8rem;
-    color: #2e8b57;
-    margin-bottom: 0.5rem;
+  font-size: 2.8rem;
+  color: #2e8b57;
+  margin-bottom: 0.5rem;
 }
 
 .hotel-header .valoracion {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
 }
 
 .hotel-header .container-estrellas {
-    display: flex;
-    justify-content: center;
-    gap: 0.3rem;
-    margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
 }
 
-.hotel-header .estrella {
-    width: 22px;
-    height: 22px;
+.estrella {
+  width: 22px;
+  height: 22px;
 }
 
 /* Carrusel de imágenes (simplificado para HTML estático) */
 .image-carousel {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
 }
 
 .image-carousel img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Sección de información */
 .info-section {
-    padding: 1rem 0;
+  padding: 1rem 0;
 }
 
 .info-section h2 {
-    font-size: 2rem;
-    color: #2e8b57;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.5rem;
+  font-size: 2rem;
+  color: #2e8b57;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
 }
 
 .info-section p {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .info-section ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
 }
 
 .info-section ul li {
-    background-color: #e6f7ee;
-    /* Fondo suave para los ítems de lista */
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    font-size: 0.95rem;
-    color: #444;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  background-color: #e6f7ee;
+  /* Fondo suave para los ítems de lista */
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .info-section ul li::before {
-    content: '✅';
-    /* Icono de checkmark */
-    font-size: 1.1rem;
+  content: '✅';
+  /* Icono de checkmark */
+  font-size: 1.1rem;
 }
 
 /* Sección de comentarios */
 .comments-section {
-    padding: 1rem 0;
-    border-top: 1px solid #eee;
+  padding: 1rem 0;
+  border-top: 1px solid #eee;
 }
 
 .comments-section h2 {
-    font-size: 2rem;
-    color: #2e8b57;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.5rem;
+  font-size: 2rem;
+  color: #2e8b57;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
 }
 
 .comment-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
 }
 
 .comment-item {
-    background-color: #f9f9f9;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.encabezado-comentario {
+  display: flex;
 }
 
 .comment-author {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* From Uiverse.io by philipo30 */
+.delete-button {
+  position: relative;
+  padding: 0.5em;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1em;
+  transition: transform 0.2s ease;
+}
+
+.trash-svg {
+  width: 2em;
+  height: 2em;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  overflow: visible;
+}
+
+#lid-group {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.delete-button:hover #lid-group {
+  transform: rotate(-28deg) translateY(2px);
+}
+
+.delete-button:active #lid-group {
+  transform: rotate(-12deg) scale(0.98);
+}
+
+.delete-button:hover .trash-svg {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.delete-button:active .trash-svg {
+  transform: scale(0.96) rotate(-1deg);
+}
+
+.cont-estrella {
+  display: flex;
+  flex-direction: row;
 }
 
 .comment-text {
-    color: #555;
+  color: #555;
 }
 
 .comment-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .comment-form label {
-    font-weight: 500;
-    color: #333;
+  font-weight: 500;
+  color: #333;
 }
 
 .comment-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    resize: vertical;
-    /* Permite redimensionar verticalmente */
-    min-height: 80px;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+  /* Permite redimensionar verticalmente */
+  min-height: 80px;
 }
 
 .comment-form input[type="text"] {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
 }
 
 .comment-form button {
-    background-color: #2e8b57;
-    /* Verde principal */
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(46, 139, 87, 0.2);
-    align-self: flex-start;
-    /* Alinea el botón a la izquierda */
+  background-color: #2e8b57;
+  /* Verde principal */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(46, 139, 87, 0.2);
+  align-self: flex-start;
+  /* Alinea el botón a la izquierda */
 }
 
 .comment-form button:hover {
-    background-color: #257a4b;
-    /* Verde más oscuro al pasar el ratón */
-    transform: translateY(-2px);
+  background-color: #257a4b;
+  /* Verde más oscuro al pasar el ratón */
+  transform: translateY(-2px);
 }
+
+
+.mensaje-exitoso {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #b7e4c7;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  margin: 1.5rem auto;
+  max-width: 350px;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.08);
+}
+
+.cont-sin-comentarios {
+  width: 100%;
+  text-align: center;
+}
+
+.cont-sin-comentarios img {
+  width: 260px;
+}
+
 
 
 /* Botón de reserva o acción */
 .action-button-container {
-    text-align: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid #eee;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
 }
 
 .action-button {
-    background-color: #007bff;
-    /* Azul para el botón de acción */
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 0.75rem;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2);
+  background-color: #007bff;
+  /* Azul para el botón de acción */
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2);
 }
 
 .action-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
+  background-color: #0056b3;
+  transform: translateY(-3px);
 }
 
 /* Botón de volver */
 .back-button {
-    display: inline-block;
-    margin-top: 2rem;
-    text-decoration: none;
-    color: #007bff;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+  display: inline-block;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 .back-button:hover {
-    color: #0056b3;
-    text-decoration: underline;
+  color: #0056b3;
+  text-decoration: underline;
 }
+
+/* From Uiverse.io by LeonKohli */
+.radio {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-direction: row-reverse;
+}
+
+.radio>input {
+  position: absolute;
+  appearance: none;
+}
+
+.radio>label {
+  cursor: pointer;
+  font-size: 30px;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.radio>label>svg {
+  fill: #666;
+  transition: fill 0.3s ease;
+}
+
+.radio>label::before,
+.radio>label::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #ff9e0b;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+  animation: particle-explosion 1s ease-out;
+}
+
+.radio>label::before {
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+}
+
+.radio>label::after {
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+}
+
+.radio>label:hover::before,
+.radio>label:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.5);
+}
+
+.radio>label:hover {
+  transform: scale(1.2);
+  animation: pulse 0.6s infinite alternate;
+}
+
+.radio>label:hover>svg,
+.radio>label:hover~label>svg {
+  fill: #ff9e0b;
+  filter: drop-shadow(0 0 15px rgba(255, 158, 11, 0.9));
+  animation: shimmer 1s ease infinite alternate;
+}
+
+.radio>input:checked+label>svg,
+.radio>input:checked+label~label>svg {
+  fill: #ff9e0b;
+  filter: drop-shadow(0 0 15px rgba(255, 158, 11, 0.9));
+  animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes particle-explosion {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(255, 158, 11, 0.5));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255, 158, 11, 1));
+  }
+}
+
+.radio>input:checked+label:hover>svg,
+.radio>input:checked+label:hover~label>svg {
+  fill: #e58e09;
+}
+
+.radio>label:hover>svg,
+.radio>label:hover~label>svg {
+  fill: #ff9e0b;
+}
+
+.radio input:checked~label svg {
+  fill: #ffa723;
+}
+
+.info {
+  background: #f0f4ff;
+  color: #2a4d8f;
+  border: 1.5px solid #7ea6e0;
+  padding: 0.8rem 1.2rem 0.8rem 2.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-weight: 500;
+  position: relative;
+}
+
+.info b {
+  display: flex;
+  margin-left: 10px;
+  flex-wrap: wrap;
+}
+
+.info::before {
+  content: "ℹ️";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+}
+
 
 /* Media queries para responsividad */
 @media (max-width: 768px) {
-    .hotel-detail-container {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
+  .hotel-detail-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
 
-    .hotel-header h1 {
-        font-size: 2rem;
-    }
+  .hotel-header h1 {
+    font-size: 2rem;
+  }
 
-    .info-section h2,
-    .comments-section h2 {
-        font-size: 1.6rem;
-    }
+  .info-section h2,
+  .comments-section h2 {
+    font-size: 1.6rem;
+  }
 
-    .image-carousel {
-        grid-template-columns: 1fr;
-        /* Una sola columna en móvil */
-    }
+  .image-carousel {
+    grid-template-columns: 1fr;
+    /* Una sola columna en móvil */
+  }
 
-    .action-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
+  .action-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
 }
