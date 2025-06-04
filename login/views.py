@@ -76,8 +76,14 @@ def info_hoteles(request,hotel_id):
 #Buscar hotel
 def buscar_hotel(request,nombre):
     """   list_imagenes = [] """
+    info_comentarios = []
     try:
         hotel = Hoteles.objects.get(nombre__iexact=nombre)
+        comentarios = Comentarios.objects.filter(fk_hotel = hotel)
+        for c in comentarios:
+            usuario = c.fk_usuario
+            info_comentarios.append({"usuario":usuario,"id":c.pk,"comentario":c.comentario,"estrellas_llenas_c":list(range(c.estrellas)),"estrellas_vacias_c":list(range(5 - c.estrellas))})
+        ya_comento = Comentarios.objects.filter(fk_hotel = hotel,fk_usuario = request.user).exists()
     except Hoteles.DoesNotExist:
         hoteles = Hoteles.objects.all()
         informacion = []
@@ -88,7 +94,7 @@ def buscar_hotel(request,nombre):
     imagenes = ImagenesH.objects.filter(fk_hoteles = hotel)
     """   for img in imagenes:
         list_imagenes.append(img.imagen.url) """
-    return render(request,"info_hotel.html",{"hotel":hotel,"imagenes":imagenes,"estrellas_llenas": range(hotel.estrellas),  "estrellas_vacias": range(5 - hotel.estrellas)})
+    return render(request, "info_hotel.html",{"hotel":hotel,"imagenes": imagenes,"estrellas_llenas": range(hotel.estrellas), "estrellas_vacias": range(5 - hotel.estrellas),"comentarios":info_comentarios,"ya_comento":ya_comento})
 
 #Renderizar template de los integrantes del proyecto
 def nosotros_view(request):

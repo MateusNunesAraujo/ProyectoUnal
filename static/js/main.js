@@ -2,6 +2,8 @@ const parrot = document.getElementById('parrot');
 const parrotMessage = document.getElementById('parrotMessage');
 
 const mensajes = [
+    "Preservemos juntos la naturaleza. Por mí, por todos...",
+    "¿Sabías que la selva del Amazonas contiene una alta diversidad de ranas venenosas y tienen colores llamativos?",
     "¿Sabías que Leticia es la capital del departamento del Amazonas en Colombia?",
     "En Leticia puedes encontrar el Parque Santander, famoso por sus bandadas de loros que llegan al atardecer.",
     "¿Sabías que el río Amazonas, uno de los más largos y caudalosos del mundo, bordea Leticia?",

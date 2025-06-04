@@ -9,18 +9,22 @@ def register_view(request):
 
 #Crear usuarios
 def create_user(request):
-       if(request.POST["password_user"] == request.POST["confirm_password_user"]):
-            user = User.objects.create(
-                   username = request.POST['username_user'],
-                   first_name = request.POST['primer_nombre'],
-                   last_name = request.POST['apellidos'],
-                   email = request.POST['email_user'],
-                   role = 'tourist'  
-                   )
-            user.set_password(request.POST['password_user'])
-            user.save()
-            user_autenticado = authenticate(request, email=request.POST['email_user'], password=request.POST['password_user'])
-            login(request,user_autenticado)
-            return redirect('home')
+       email = request.POST['email_user']
+       if(not User.objects.filter(email = email).exists()):
+              if(request.POST["password_user"] == request.POST["confirm_password_user"]):
+                     user = User.objects.create(
+                            username = request.POST['username_user'],
+                            first_name = request.POST['primer_nombre'],
+                            last_name = request.POST['apellidos'],
+                            email = request.POST['email_user'],
+                            role = 'tourist'  
+                            )
+                     user.set_password(request.POST['password_user'])
+                     user.save()
+                     user_autenticado = authenticate(request, email=request.POST['email_user'], password=request.POST['password_user'])
+                     login(request,user_autenticado)
+                     return redirect('home')
+              else:
+                     return render(request,"register.html",{"mensaje":"Las contraseñas no son iguales."})
        else:
-              return render(request,"register.html",{"mensaje":"Las contraseñas no son iguales."})
+               return render(request,"register.html",{"mensaje":"Este correo electrónico ya está en uso"})

@@ -45,7 +45,7 @@ function filtrar(informacion) {
             });
 
             if (template == "") {
-                document.querySelector('.container-hotel').innerHTML = `<div class='sin-resultado'><h1>Sin resultados</h1><img src="/static/img/img/loro_triste.png" alt=""></div>`
+                document.querySelector('.container-hotel').innerHTML = `<div class='sin-resultado'><h1>Sin resultados</h1><img src="/static/img/img/loro_triste.webp" alt="loro triste"></div>`
             } else {
                 document.querySelector('.container-hotel').innerHTML = template
                 document.querySelectorAll(".info-hotel").forEach(e => {

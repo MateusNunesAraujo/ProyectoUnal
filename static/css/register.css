@@ -4,7 +4,7 @@
  /* Estilos generales del cuerpo */
  body {
      font-family: 'Inter', sans-serif;
-     background-image: url('/static/img/img/palmeras.png');
+     background-image: url('/static/img/img/palmeras.webp');
      background-color: #cbf8ce;
      /* bg-gray-100 */
      display: flex;
